@@ -66,7 +66,24 @@
             GetPartialView("DisplayUomColorList", "Admin", jSonData, "divUomColorDetails");
         });
 
+        $(".productprice").on("change", function () {
+            var sellingprice = [];
+            $(".productprice").each(function () {
+                if ($(this).val() === "") {
+                    sellingprice.push(0);
+                }
+                else {
+                    sellingprice.push($(this).val());
+                }
+            });
+            var totalAmount = 0;
+            for (var i in sellingprice) {
 
+                totalAmount += parseFloat(sellingprice[i]);
+            }
+            $("#txtSellingPrice").val(totalAmount);
+            $("#hdnSellingPrice").val(totalAmount);
+        });
     });
 </script>
 <style>
@@ -84,8 +101,9 @@
 </style>
 @using (Html.BeginForm("SaveProducts", "Admin", FormMethod.Post, new { id = "frmSaveProducts" , enctype = "multipart/form-data"}))
 {
-    Html.HiddenFor(hdn => hdn.SelectedCategoryDescription,new {id = "hdnSelectedCategoryDescription"});
-    Html.HiddenFor(hdn => hdn.SelectedSubCategoryDescription, new { id = "hdnSelectedSubCategoryDescription" });
+    @Html.Hidden("SelectedCategoryDescription", Model.SelectedCategoryDescription, new { @id = "hdnSelectedCategoryDescription" })
+    @Html.Hidden("SelectedSubCategoryDescription", Model.SelectedSubCategoryDescription, new { @id = "hdnSelectedSubCategoryDescription" })
+    @Html.Hidden("SellingPrice", Model.SellingPrice, new { @id = "hdnSellingPrice" })
     
     <div id="columns" class="container ">
         <div class="breadcrumb">
@@ -105,19 +123,19 @@
                             <tr>
                                 <td>Product Name</td>
                                 <td>
-                                @Html.TextBoxFor(m => m.ProductName, new { id = "txtProductName",maxlength="100" })
+                                @Html.TextBoxFor(m => m.ProductName, new { @id = "txtProductName",maxlength="100" })
                                 </td>
                             </tr>
                             <tr>
                                 <td>Product Description</td>
                                 <td>
-                                    @Html.TextAreaFor(m => m.ProductDescription, new { id = "txtProductDesc", maxlength = "500" })
+                                    @Html.TextAreaFor(m => m.ProductDescription, new { @id = "txtProductDesc", maxlength = "500" })
                                 </td>
                             </tr>
                             <tr>
                                 <td>Product Number</td>
                                 <td>
-                                    @Html.TextBoxFor(m => m.ProductNumber, new { id = "txtProductNumber", maxlength = "100" })
+                                    @Html.TextBoxFor(m => m.ProductNumber, new { @id = "txtProductNumber", maxlength = "100" })
                                 </td>
                             </tr>
                             <tr>
@@ -145,19 +163,19 @@
                                         <tr><th>Base Price</th><th>Cost of Labor</th><th>Overhead</th><th>Profit Margin</th><th>Selling Price</th></tr>
                                         <tr>
                                             <td>
-                                                @Html.TextBoxFor(m => m.BasePrice, new { id = "txtBasePrice", maxlength = "6" })
+                                                @Html.TextBoxFor(m => m.BasePrice, new { @id = "txtBasePrice", @maxlength = "6",@class="productprice" })
                                             </td>
                                             <td>
-                                                @Html.TextBoxFor(m => m.CostofLabor, new { id = "txtCostofLabor", maxlength = "6" })
+                                                @Html.TextBoxFor(m => m.CostofLabor, new { @id = "txtCostofLabor", @maxlength = "6", @class = "productprice" })
                                             </td>
                                             <td>
-                                                @Html.TextBoxFor(m => m.Overhead, new { id = "txtOverhead", maxlength = "6" })
+                                                @Html.TextBoxFor(m => m.Overhead, new { @id = "txtOverhead", @maxlength = "6", @class = "productprice" })
                                             </td>
                                             <td>
-                                                @Html.TextBoxFor(m => m.ProfitMargin, new { id = "txtProfitofMargin", maxlength = "6" })
+                                                @Html.TextBoxFor(m => m.ProfitMargin, new { @id = "txtProfitofMargin", @maxlength = "6", @class = "productprice" })
                                             </td>
                                             <td>
-                                                @Html.TextBoxFor(m => m.SellingPrice, new { id = "txtSellingPrice", maxlength = "6",disabled = "disabled"})
+                                                @Html.TextBox("txtSellingPrice", Model.SellingPrice, new { @id = "txtSellingPrice", @maxlength = "6", @disabled = "disabled" })
                                             </td>
                                         </tr>
                                     </table>
