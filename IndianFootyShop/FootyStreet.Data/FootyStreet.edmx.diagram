@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="26b48d6720ed4052ae18b5de8a042a5d" Name="Diagram1">
+        <EntityTypeShape EntityType="FootyStreetModel.Category" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootyStreetModel.CategorySubCategory" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootyStreetModel.Color" Width="1.5" PointX="3" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootyStreetModel.Invoice" Width="1.5" PointX="7.5" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootyStreetModel.Offer" Width="1.5" PointX="6" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootyStreetModel.OrderHeader" Width="1.5" PointX="5.25" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootyStreetModel.Product" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootyStreetModel.ProductCategorySubCategory" Width="1.5" PointX="5.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootyStreetModel.ProductInventory" Width="1.5" PointX="7.5" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootyStreetModel.ProductOffer" Width="1.5" PointX="8.25" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootyStreetModel.ProductPrice" Width="1.5" PointX="7.5" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootyStreetModel.ProductReview" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootyStreetModel.ProductUOMColor" Width="1.5" PointX="5.25" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootyStreetModel.Review" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootyStreetModel.ShippingDetail" Width="1.5" PointX="3" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootyStreetModel.SubCategory" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootyStreetModel.sysdiagram" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootyStreetModel.UnitofMeasure" Width="1.5" PointX="3" PointY="21.125" IsExpanded="true" />
+        <AssociationConnector Association="FootyStreetModel.FK_CategorySubCategory_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="FootyStreetModel.FK_CategorySubCategory_SubCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="FootyStreetModel.FK_ProductUOMColor_Color" ManuallyRouted="false" />
+        <AssociationConnector Association="FootyStreetModel.FK_Invoice_OrderHeader" ManuallyRouted="false" />
+        <AssociationConnector Association="FootyStreetModel.FK_Invoice_ProductUOMColor" ManuallyRouted="false" />
+        <AssociationConnector Association="FootyStreetModel.FK_ProductOffer_Offer" ManuallyRouted="false" />
+        <AssociationConnector Association="FootyStreetModel.FK_OrderHeader_ShippingDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="FootyStreetModel.FK_ProductCategorySubCategory_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="FootyStreetModel.FK_ProductOffer_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="FootyStreetModel.FK_ProductReview_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="FootyStreetModel.FK_ProductUOMColor_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="FootyStreetModel.FK_ProductInventory_ProductUOMColor" ManuallyRouted="false" />
+        <AssociationConnector Association="FootyStreetModel.FK_ProductPrice_ProductUOMColor" ManuallyRouted="false" />
+        <AssociationConnector Association="FootyStreetModel.FK_ProductReview_Review" ManuallyRouted="false" />
+        <AssociationConnector Association="FootyStreetModel.FK_ProductUOMColor_UnitofMeasure" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FootyStreetModel.ProductTag" Width="1.5" PointX="11.25" PointY="13.25" />
+        <EntityTypeShape EntityType="FootyStreetModel.Tag" Width="1.5" PointX="9" PointY="5.25" />
+        <AssociationConnector Association="FootyStreetModel.FK_ProductTag_Product" />
+        <AssociationConnector Association="FootyStreetModel.FK_ProductTag_Tag" />
+        <EntityTypeShape EntityType="FootyStreetModel.Vendor" Width="1.5" PointX="0.75" PointY="18.125" />
+        <EntityTypeShape EntityType="FootyStreetModel.Address" Width="1.5" PointX="10.625" PointY="1" />
+        <EntityTypeShape EntityType="FootyStreetModel.AddressType" Width="1.5" PointX="8.375" PointY="1.375" />
+        <EntityTypeShape EntityType="FootyStreetModel.Contact" Width="1.5" PointX="5.375" PointY="0.75" />
+        <AssociationConnector Association="FootyStreetModel.FK_Address_AddressType" />
+        <EntityTypeShape EntityType="FootyStreetModel.Image" Width="1.5" PointX="8.25" PointY="9" />
+        <EntityTypeShape EntityType="FootyStreetModel.ProductImage" Width="1.5" PointX="10.5" PointY="17.25" />
+        <AssociationConnector Association="FootyStreetModel.FK_ProductImage_Image" />
+        <AssociationConnector Association="FootyStreetModel.FK_ProductImage_ProductUOMColor" />
+        <EntityTypeShape EntityType="FootyStreetModel.Price" Width="1.5" PointX="0.75" PointY="9.375" />
+        <EntityTypeShape EntityType="FootyStreetModel.ProductDetail" Width="1.5" PointX="0.75" PointY="12.875" />
+        <AssociationConnector Association="FootyStreetModel.FK_ProductDetail_Price" />
+        <AssociationConnector Association="FootyStreetModel.FK_Product_ProductDetail" />
+        <AssociationConnector Association="FootyStreetModel.FK_ProductDetail_Vendor" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
