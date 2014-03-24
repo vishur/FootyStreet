@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://hbe.ky.gov/xsd/INT_PUSH_AR_APPL_REG_V1.0.xsd" elementFormDefault="qualified" targetNamespace="http://hbe.ky.gov/xsd/INT_PUSH_AR_APPL_REG_V1.0.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SubmitAppointment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Appointment">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="PersonToBeInterviewed" type="tns:PersonToBeInterviewed" />
+              <xs:element minOccurs="0" maxOccurs="1" name="RequestedBy" type="tns:RequestedBy" />
+              <xs:element minOccurs="0" maxOccurs="1" name="Address" type="tns:Address" />
+              <xs:element minOccurs="0" maxOccurs="1" name="AppointmentId" nillable="true" type="xs:int" />
+              <xs:element minOccurs="0" maxOccurs="1" name="CaseNumber" nillable="true" type="xs:int" />
+              <xs:element minOccurs="0" maxOccurs="1" name="IndividualId" nillable="true" type="xs:int" />
+              <xs:element minOccurs="0" maxOccurs="1" name="AddressId" nillable="true" type="xs:int" />
+              <xs:element minOccurs="1" maxOccurs="1" name="OfficeId" type="xs:int" />
+              <xs:element minOccurs="0" maxOccurs="1" name="CatagoryCode" type="xs:string" />
+              <xs:element minOccurs="1" maxOccurs="1" name="StartDate" type="xs:dateTime" />
+              <xs:element minOccurs="0" maxOccurs="1" name="EndDate" nillable="true" type="xs:dateTime" />
+              <xs:element minOccurs="1" maxOccurs="1" name="FirstName" nillable="true" type="xs:string" />
+              <xs:element minOccurs="1" maxOccurs="1" name="LastName" nillable="true" type="xs:string" />
+              <xs:element minOccurs="1" maxOccurs="1" name="MiddleInitial" nillable="true" type="xs:string" />
+              <xs:element minOccurs="1" maxOccurs="1" name="SuffixCode" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="1" name="InterviewTypeCode" type="xs:string" />
+              <xs:element minOccurs="1" maxOccurs="1" name="SpecialAccomodationCode" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="1" name="AppointmentStatusCode" type="xs:string" />
+              <xs:element minOccurs="1" maxOccurs="1" name="AppointmentNotes" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PersonToBeInterviewed">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="AppointmentId" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IndividualId" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="MiddleInitial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SuffixCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RequestedBy">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="AppointmentId" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IndividualId" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="MiddleInitial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SuffixCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AddressLine1" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="AddressLine2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="City" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StateCode" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ZipCode4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CountyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ZipCode5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IsValidated" nillable="true" type="tns:YesNoType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="YesNoType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Y" />
+      <xs:enumeration value="N" />
+      <xs:enumeration value="U" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SubmitAppointmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="SubmitAppointmentResult" type="tns:ResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="runMode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AppointmentId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="caseNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="documentId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="exceptionId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="transactionDuration" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="messages" type="tns:SSPDCMessageType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SSPDCMessageType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="messageClassification">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="confirm" />
+            <xs:enumeration value="errors" />
+            <xs:enumeration value="warning" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="activityDuration" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="messageKey" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="messageText" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="processId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

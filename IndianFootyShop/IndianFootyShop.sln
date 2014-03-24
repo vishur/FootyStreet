@@ -1,0 +1,115 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndianFootyShop", "IndianFootyShop\IndianFootyShop.csproj", "{5EFCFAA6-36A3-43D1-A604-02CB3C0E6C95}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{8A4A217A-FA27-4560-A2AE-A18C9FF96803}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccessLayer", "DataAccessLayer", "{586F1C47-E6FC-4933-B6BC-E3E44FCF4626}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portal", "Portal", "{60CF579C-0B61-40C5-873E-736E7E7834B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{4D4A5C42-8453-4AB4-9652-A3BFD77E3E69}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{7DA32E3E-1E47-47B8-BE65-F0E3F4F88E93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootyStreet.Business.Administration", "FootyStreet.Business.Administration\FootyStreet.Business.Administration.csproj", "{09082A13-8FF4-4D16-A7A6-AD3DC7D27962}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootyStreet.Business.Administration.Contracts", "FootyStreet.Business.Administration.Contracts\FootyStreet.Business.Administration.Contracts.csproj", "{9CE8B413-0E0D-42E3-8B51-25C92CAAA3DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Administration", "Administration", "{52CD6229-9B59-48D6-8114-AD488DEFB8DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{9BEAEC38-7819-482E-9A22-119661867DB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootyStreet.Business.Common", "FootyStreet.Business.Common\FootyStreet.Business.Common.csproj", "{BE55D1C9-A807-4210-A087-28E0A4611728}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootyStreet.Utilities", "FootyStreet.Utilities\FootyStreet.Utilities.csproj", "{0BC394FC-8E03-4C8C-BABA-9844DDDFA947}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{28FE231E-52BD-469E-914D-D6140191094C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework", "Framework\Framework.csproj", "{38880C1F-435E-42CD-842D-250B444D86C9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependancies", "Dependancies", "{FB5BB5D9-F2FB-4578-889B-0420BC2E522E}"
+	ProjectSection(SolutionItems) = preProject
+		IndianFootyShop\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll = IndianFootyShop\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+		IndianFootyShop\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll = IndianFootyShop\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+		IndianFootyShop\bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll = IndianFootyShop\bin\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+		IndianFootyShop\bin\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll = IndianFootyShop\bin\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll
+		IndianFootyShop\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll = IndianFootyShop\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+		IndianFootyShop\bin\Microsoft.Practices.ServiceLocation.dll = IndianFootyShop\bin\Microsoft.Practices.ServiceLocation.dll
+		IndianFootyShop\bin\Microsoft.Practices.Unity.Configuration.dll = IndianFootyShop\bin\Microsoft.Practices.Unity.Configuration.dll
+		IndianFootyShop\bin\Microsoft.Practices.Unity.dll = IndianFootyShop\bin\Microsoft.Practices.Unity.dll
+		IndianFootyShop\bin\Microsoft.Practices.Unity.Interception.dll = IndianFootyShop\bin\Microsoft.Practices.Unity.Interception.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Product", "Product", "{43CD18E4-FC4C-41A0-901A-B2C91571FE4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootyStreet.Business.Product", "FootyStreet.Business.Product\FootyStreet.Business.Product.csproj", "{9859A3A4-5D11-45FF-9543-9FAC894974E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootyStreet.Business.Product.Contracts", "FootyStreet.Business.Product.Contracts\FootyStreet.Business.Product.Contracts.csproj", "{7DCAA07B-843E-4A54-9417-BBEFFE9B35F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootyStreet.Data", "FootyStreet.Data\FootyStreet.Data.csproj", "{3F9AA1B2-B562-405A-9B64-67AFE413BB8A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5EFCFAA6-36A3-43D1-A604-02CB3C0E6C95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EFCFAA6-36A3-43D1-A604-02CB3C0E6C95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EFCFAA6-36A3-43D1-A604-02CB3C0E6C95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EFCFAA6-36A3-43D1-A604-02CB3C0E6C95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09082A13-8FF4-4D16-A7A6-AD3DC7D27962}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09082A13-8FF4-4D16-A7A6-AD3DC7D27962}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09082A13-8FF4-4D16-A7A6-AD3DC7D27962}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09082A13-8FF4-4D16-A7A6-AD3DC7D27962}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CE8B413-0E0D-42E3-8B51-25C92CAAA3DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CE8B413-0E0D-42E3-8B51-25C92CAAA3DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CE8B413-0E0D-42E3-8B51-25C92CAAA3DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CE8B413-0E0D-42E3-8B51-25C92CAAA3DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE55D1C9-A807-4210-A087-28E0A4611728}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE55D1C9-A807-4210-A087-28E0A4611728}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE55D1C9-A807-4210-A087-28E0A4611728}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE55D1C9-A807-4210-A087-28E0A4611728}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BC394FC-8E03-4C8C-BABA-9844DDDFA947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BC394FC-8E03-4C8C-BABA-9844DDDFA947}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BC394FC-8E03-4C8C-BABA-9844DDDFA947}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BC394FC-8E03-4C8C-BABA-9844DDDFA947}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38880C1F-435E-42CD-842D-250B444D86C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38880C1F-435E-42CD-842D-250B444D86C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38880C1F-435E-42CD-842D-250B444D86C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38880C1F-435E-42CD-842D-250B444D86C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9859A3A4-5D11-45FF-9543-9FAC894974E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9859A3A4-5D11-45FF-9543-9FAC894974E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9859A3A4-5D11-45FF-9543-9FAC894974E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9859A3A4-5D11-45FF-9543-9FAC894974E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DCAA07B-843E-4A54-9417-BBEFFE9B35F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DCAA07B-843E-4A54-9417-BBEFFE9B35F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DCAA07B-843E-4A54-9417-BBEFFE9B35F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DCAA07B-843E-4A54-9417-BBEFFE9B35F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F9AA1B2-B562-405A-9B64-67AFE413BB8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F9AA1B2-B562-405A-9B64-67AFE413BB8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F9AA1B2-B562-405A-9B64-67AFE413BB8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F9AA1B2-B562-405A-9B64-67AFE413BB8A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5EFCFAA6-36A3-43D1-A604-02CB3C0E6C95} = {60CF579C-0B61-40C5-873E-736E7E7834B9}
+		{52CD6229-9B59-48D6-8114-AD488DEFB8DC} = {8A4A217A-FA27-4560-A2AE-A18C9FF96803}
+		{9BEAEC38-7819-482E-9A22-119661867DB4} = {8A4A217A-FA27-4560-A2AE-A18C9FF96803}
+		{43CD18E4-FC4C-41A0-901A-B2C91571FE4C} = {8A4A217A-FA27-4560-A2AE-A18C9FF96803}
+		{3F9AA1B2-B562-405A-9B64-67AFE413BB8A} = {586F1C47-E6FC-4933-B6BC-E3E44FCF4626}
+		{0BC394FC-8E03-4C8C-BABA-9844DDDFA947} = {4D4A5C42-8453-4AB4-9652-A3BFD77E3E69}
+		{9CE8B413-0E0D-42E3-8B51-25C92CAAA3DA} = {52CD6229-9B59-48D6-8114-AD488DEFB8DC}
+		{09082A13-8FF4-4D16-A7A6-AD3DC7D27962} = {52CD6229-9B59-48D6-8114-AD488DEFB8DC}
+		{BE55D1C9-A807-4210-A087-28E0A4611728} = {9BEAEC38-7819-482E-9A22-119661867DB4}
+		{38880C1F-435E-42CD-842D-250B444D86C9} = {28FE231E-52BD-469E-914D-D6140191094C}
+		{9859A3A4-5D11-45FF-9543-9FAC894974E5} = {43CD18E4-FC4C-41A0-901A-B2C91571FE4C}
+		{7DCAA07B-843E-4A54-9417-BBEFFE9B35F6} = {43CD18E4-FC4C-41A0-901A-B2C91571FE4C}
+	EndGlobalSection
+EndGlobal

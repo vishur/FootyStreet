@@ -1,0 +1,111 @@
+@media only screen and (max-width:767px) and (min-width:480px)
+{
+body#index .instant + #right_column {
+	display: none;
+}
+#mobilelink {
+	width: 178px;
+}
+#countries_2 .countries_ul {
+	width: 179px;
+}
+#setCurrency .currencies_ul {
+	width: 179px;
+}
+.alert_cart {
+	left: 50%; width: 420px; margin-left: -210px;
+}
+#header_user #shopping_cart a:hover {
+	box-shadow: none;
+}
+#header #cart_block {
+	top: 210px;
+}
+#header_user {
+	top: 164px;
+}
+#featured_products ul li .product_image {
+	margin: 0px auto; width: 200px; height: 215px; float: none;
+}
+#featured_products ul li h5 {
+	width: 180px; padding-top: 10px; float: none; min-height: 25px;
+}
+#featured_products ul li .product_descr {
+	width: 180px; font-size: 12px; float: none; display: none;
+}
+#columns #featured_products ul li h5 a {
+	font-size: 16px;
+}
+.products_block ul li > div {
+	width: 348px;
+}
+#newsletter_block_left input[type='email'] {
+	width: 100%;
+}
+.column #cart_block .products .price {
+	width: 301px;
+}
+#layered_form .select {
+	width: 460px;
+}
+#layered_form div div ul {
+	position: relative;
+}
+div#stores_block p.text input {
+	width: 407px; height: 35px; line-height: 35px;
+}
+div#stores_block p.select select {
+	height: 35px; line-height: 35px;
+}
+#subcategories ul li {
+	width: 141px;
+}
+#subcategories ul li.product_list_3 {
+	
+}
+#subcategories ul li.product_list_4 {
+	
+}
+#subcategories ul li .lnk_more {
+	min-height: 28px;
+}
+.product_sort #productsSortForm select {
+	width: 420px;
+}
+.row_compare_mobile {
+	width: 100%; overflow: auto;
+}
+p.cart_navigation .exclusive {
+	margin-right: 0px; margin-bottom: 0px; float: right;
+}
+p.cart_navigation .exclusive_large {
+	margin-right: 0px; margin-bottom: 0px; float: right;
+}
+.list-order-step li {
+	width: 380px; height: auto;
+}
+.list-order-step .img-order {
+	height: 136px;
+}
+.list-order-step .price-order {
+	padding-left: 0px;
+}
+table#cart_summary td.cart_product {
+	width: 146px;
+}
+table#cart_summary .min-with-td {
+	font-weight: normal; display: inline-block; min-width: 100px;
+}
+form#voucher fieldset p input.discount_name {
+	width: 335px;
+}
+table#cart_summary td.tdfirst {
+	width: 77%;
+}
+#sendOrderMessage select {
+	width: 398px;
+}
+#cluetip {
+	left: 50% !important; margin-left: -225px;
+}
+}

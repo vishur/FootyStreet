@@ -1,0 +1,189 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<style>
+    .fixme {
+        background: green;
+        color: white;
+        text-align: center;
+        width: 10%;
+        float:right;
+        z-index:1000;
+    }
+</style>
+<script>
+    //$(window).scroll(function () {
+    //    $('#sidebarPage1').stop();
+    //    $('#sidebarPage1').animate({ top: $(this).scrollTop() + 50 + "px" }, 'slow');
+    //});
+    $(document).ready(function () {
+
+        //this is the floating content
+        var $floatingbox = $('#floating-box');
+
+        var fixmeTop = $('.fixme').offset().top;
+        $(window).scroll(function () {
+            var currentScroll = $(window).scrollTop();
+            if (currentScroll >= fixmeTop) {
+                $('.fixme').css({
+                    position: 'fixed',
+                    float: 'right',
+                    bottom: '0',
+                    right: '0'
+                });
+            } else {
+                $('.fixme').css({
+                    position: 'static'
+                });
+            }
+        });
+
+        //if ($('#body').length > 0) {
+
+        //    var bodyY = parseInt($('#body').offset().top) - 20;
+        //    var originalX = $floatingbox.css('margin-left');
+
+        //    $(window).scroll(function () {
+
+        //        var scrollY = $(window).scrollTop();
+        //        var isfixed = $floatingbox.css('position') == 'fixed';
+
+        //        if ($floatingbox.length > 0) {
+
+        //            $floatingbox.html("srollY : " + scrollY + ", bodyY : "
+        //                                      + bodyY + ", isfixed : " + isfixed);
+
+        //            if (scrollY > bodyY && !isfixed) {
+        //                $floatingbox.stop().css({
+        //                    position: 'fixed',
+        //                    left: '50%',
+        //                    top: 20,
+        //                    marginLeft: -500
+        //                });
+        //            } else if (scrollY < bodyY && isfixed) {
+        //                $floatingbox.css({
+        //                    position: 'relative',
+        //                    left: 0,
+        //                    top: 0,
+        //                    marginLeft: originalX
+        //                });
+        //            }
+        //        }
+        //    });
+        //}
+
+
+
+
+
+        $('.APTCAmount').on("change", function () {
+            var aptcAmounts = [];
+            var validationfailed = [];
+            $('.APTCAmount').each(function () {
+                var divId = this.id.replace("txt", "div");
+                if ($(this).val() === "") {
+                    aptcAmounts.push(0);
+                }
+                else if (parseInt($(this).val()) > parseInt($('#' + divId).text())) {
+                    validationfailed.push(this.id);
+                    aptcAmounts.push($(this).val());
+                }
+                else {
+                    $(this).css('border-color', "");
+                    aptcAmounts.push($(this).val());
+                }
+            });
+            var totalAmount = 0;
+            for (var i in aptcAmounts) {
+
+                totalAmount += parseInt(aptcAmounts[i]);
+            }
+
+            for (var i in validationfailed) {
+
+                $("#" + validationfailed[i]).css('border-color', "red");
+            }
+            // validationfailed = [];
+            $('#spanTotalAmount').text(totalAmount);
+        });
+    });
+</script>
+<style>
+    #floating-box {
+        width: 90px;
+        height: 200px;
+        border: 1px solid red;
+        background-color: #BBBBBB;
+        float: left;
+        margin-left: -100px;
+        margin-right: 10px;
+        position: absolute;
+        z-index: 1;
+    }
+</style>
+<div class="fixme"><span id="spanTotalAmount">100</span>
+</div>
+<div id="floating-box">
+    <img src="http://washingtonbus.org/twitter_vertical.png" title="" />
+</div>
+<div id="body">
+    <h1>content</h1>
+    <h2>Mashable floating effect example</h2>
+</div>
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+
+<article>
+    <p>
+        Use this area to provide additional information.
+    </p>
+
+    <p>
+        Use this area to provide additional information.
+    </p>
+
+    <p>
+        Use this area to provide additional information.
+    </p>
+</article>
+
+<aside>
+    <h3>Aside Title</h3>
+    <p>
+        Use this area to provide additional information.
+    </p>
+    <ul>
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li>@Html.ActionLink("About", "About", "Home")</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+    </ul>
+</aside>
+
+<div>
+
+
+    <table>
+        @{
+            for (int i = 0; i < 5; i++)
+            {
+
+                <tr>
+                    <td>
+                        <div id="divAPTCAmount_@i">100</div>
+                    </td>
+                    <td>
+                        <input type="text" name="name" value="" class="APTCAmount" id="txtAPTCAmount_@i" />
+                    </td>
+                </tr>
+
+            }
+
+        }
+
+        <tr><td><span id="spanTotalAmount1">sdfk;ksjflk;sdfl;skfd;l</span></td> </tr>
+    </table>
+</div>

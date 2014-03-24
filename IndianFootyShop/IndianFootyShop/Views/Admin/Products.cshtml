@@ -1,0 +1,222 @@
+﻿@using FootyStreet.Business.Product.Contracts;
+@using IndianFootyShop;
+
+@model ProductViewModel
+@{
+
+}
+
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<script>
+    //function getUpload() {
+    //    return $("#fileThumbnailImages").data("kendoUpload");
+    //}
+
+    function GetPartialView(actionName, controllerName, jSonData, divId) {
+        var currHost = "@HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority)" + "@HttpContext.Current.Request.ApplicationPath";
+        if ('@HttpContext.Current.Request.ApplicationPath' != '/')
+            var rawUrl = '/' + controllerName + '/' + actionName + '/';
+        else
+            var rawUrl = controllerName + '/' + actionName + '/';
+        // $.blockUI({ message: $('#loadingImage') });
+        $.ajax({
+            url: currHost + rawUrl,
+            data: jSonData,
+            dataType: "html",// <-- to expect an html response
+            async: true,
+            cache: false,
+            success: function (data) {
+                // debugger;
+                $("#" + divId).html(data);
+            },
+            failure: function () {
+                alert("fail")
+            }
+        });
+
+    }
+    $(document).ready(function () {
+        $('#ddlCategories').change(function (request, response) {//2
+            $("#hdnSelectedCategoryDescription").val($("#ddlCategories option:selected").text());
+            $.getJSON('@Url.Action("GetSubCategories")', { categoryId: $('#ddlCategories').val() }, function (data) {
+                var items = '<option>--select--</option>';
+                $.each(data, function (i, subCategoryList) {//4
+                    items += "<option value='" + subCategoryList.Value + "'>" + subCategoryList.Text + "</option>";
+                });
+                $('#ddlSubCategories').html(items);
+            });
+        });
+
+        $("#ddlSubCategories").on("change", function () {
+            $("#hdnSelectedSubCategoryDescription").val($("#ddlSubCategories option:selected").text());
+        });
+
+        $('#btnAdd').on("click", function () {
+            var jSonData = {
+                "uomId": $("#ddlUnitOfMeasure").val(),
+                "colorId": $("#ddlColor").val(),
+                "quantity": $("#txtQty").val(),
+                "uomDescription": $("#ddlUnitOfMeasure option:selected").text(),
+                "colorDescription": $("#ddlColor option:selected").text()
+            };
+            GetPartialView("DisplayUomColorList", "Admin", jSonData, "divUomColorDetails");
+        });
+
+
+    });
+</script>
+<style>
+    .table-row {
+        display: table;
+        /*width: 100%;*/
+    }
+
+    .table-cell {
+        float: left;
+        padding-bottom: 2px;
+        padding-left: 5px;
+        padding-top: 2px;
+    }
+</style>
+@using (Html.BeginForm("SaveProducts", "Admin", FormMethod.Post, new { id = "frmSaveProducts" , enctype = "multipart/form-data"}))
+{
+    Html.HiddenFor(hdn => hdn.SelectedCategoryDescription,new {id = "hdnSelectedCategoryDescription"});
+    Html.HiddenFor(hdn => hdn.SelectedSubCategoryDescription, new { id = "hdnSelectedSubCategoryDescription" });
+    
+    <div id="columns" class="container ">
+        <div class="breadcrumb">
+            <div class="breadcrumb_inset">
+                <a class="breadcrumb-home" href="@Url.Action("Index","Home")" title="Return to Home"><i class="icon-home"></i></a>
+                <span class="navigation-pipe ">&gt;</span>
+                <span class="navigation_page">Manage Products</span>
+            </div>
+        </div>
+        <div class="row">
+            <div id="center_column" class="center_column span9 clearfix">
+                <form id="frmManageProduct" action="" method="post" class="std">
+                    <fieldset class="titled_box">
+                        <h2><span>Manage Products</span></h2>
+                        <table>
+
+                            <tr>
+                                <td>Product Name</td>
+                                <td>
+                                @Html.TextBoxFor(m => m.ProductName, new { id = "txtProductName",maxlength="100" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Product Description</td>
+                                <td>
+                                    @Html.TextAreaFor(m => m.ProductDescription, new { id = "txtProductDesc", maxlength = "500" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Product Number</td>
+                                <td>
+                                    @Html.TextBoxFor(m => m.ProductNumber, new { id = "txtProductNumber", maxlength = "100" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Vendor</td>
+                                <td>
+                                    @Html.DropDownListFor(m => m.SelectedVendorID, new SelectList(Model.Vendors, "VendorID", "VendorName"), "--select--", new { @class = "dropdown width-60percent", @id = "ddlVendors" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Category</td>
+                                <td>
+                                    @Html.DropDownListFor(m => m.SelectedCategory, new SelectList(Model.Categories, "CategoryID", "CategoryDescription"), "--select--", new { @class = "dropdown width-60percent", @id = "ddlCategories" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Subcategory</td>
+                                <td>
+                                    @Html.DropDownListFor(m => m.SelectedSubCategory, Model.GetSubCategories(), "--select--", new { @class = "dropdown width-60percent", @id = "ddlSubCategories" })
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <table>
+                                        <tr><th>Base Price</th><th>Cost of Labor</th><th>Overhead</th><th>Profit Margin</th><th>Selling Price</th></tr>
+                                        <tr>
+                                            <td>
+                                                @Html.TextBoxFor(m => m.BasePrice, new { id = "txtBasePrice", maxlength = "6" })
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(m => m.CostofLabor, new { id = "txtCostofLabor", maxlength = "6" })
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(m => m.Overhead, new { id = "txtOverhead", maxlength = "6" })
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(m => m.ProfitMargin, new { id = "txtProfitofMargin", maxlength = "6" })
+                                            </td>
+                                            <td>
+                                                @Html.TextBoxFor(m => m.SellingPrice, new { id = "txtSellingPrice", maxlength = "6",disabled = "disabled"})
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <table>
+                                        <tr>
+                                            <td>UOM</td>
+                                            <td>
+                                                @Html.DropDownListFor(m => m.SelectedColor, new SelectList(Model.UnitOfMeasure, "UomID", "UomDescription"), "--select--", new { @class = "dropdown width-60percent", @id = "ddlUnitOfMeasure" })
+                                            </td>
+                                            <td>Color</td>
+                                            <td>
+                                                @Html.DropDownListFor(m => m.SelectedUnitofMeasure, new SelectList(Model.Colors, "ColorID", "ColorName"), "--select--", new { @class = "dropdown width-60percent", @id = "ddlColor" })
+                                            </td>
+                                            <td>Qty</td>
+                                            <td>
+                                                <input type="text" name="" id="txtQty" value="" />
+                                            </td>
+                                            <td><input type="button" name="" id="btnAdd" value="ADD" /></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div id="divUomColorDetails">
+
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr><td colspan="2">Thumbnail Images</td></tr>
+                            <tr>
+                                <td colspan="2">
+                                    @Html.FileInput("ThumbnailImages", "Select files to upload", new { id = "fileThumbnailImages", multiple = "multiple" })
+                                </td>
+                            </tr>
+                            <tr><td colspan="2">Complete Images</td></tr>
+                            <tr>
+                                <td colspan="2">
+                                   @Html.FileInput("CompleteImages", "Select files to upload", new { id = "fileCompleteImages", multiple = "multiple" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="button" style="width:200px" name="" value="RESET" id="btnReset" /></td>
+                                <td><input type="submit" style="width:200px" name="" value="SUBMIT" id="btnSubmit" /></td>
+                            </tr>
+
+                        </table>
+
+                    </fieldset>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+}
+

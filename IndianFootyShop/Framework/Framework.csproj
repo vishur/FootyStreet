@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38880C1F-435E-42CD-842D-250B444D86C9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Framework</RootNamespace>
+    <AssemblyName>Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\..\..\..\..\SourceControl\HBE\HBE\Common\Source\Framework\Ky.Hbe.Framework.Data\bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependancies\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependancies\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=9c844884b2afcb9e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependancies\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Container.cs" />
+    <Compile Include="ContextFactory.cs" />
+    <Compile Include="ContextHandler.cs" />
+    <Compile Include="DataAction.cs" />
+    <Compile Include="DataExtensions.cs" />
+    <Compile Include="DbContextExtensions.cs" />
+    <Compile Include="DefaultRepository.cs" />
+    <Compile Include="Disposable.cs" />
+    <Compile Include="Entities\DateRangeExtensions.cs" />
+    <Compile Include="Entities\EntityForeignKeyAttribute.cs" />
+    <Compile Include="Entities\EntityKeyAttribute.cs" />
+    <Compile Include="Entities\IAuditTracker.cs" />
+    <Compile Include="Entities\ICreateAudit.cs" />
+    <Compile Include="Entities\IDateRange.cs" />
+    <Compile Include="Entities\IInsertTracker.cs" />
+    <Compile Include="Entities\IKeyEntity.cs" />
+    <Compile Include="Entities\IUpdateTracker.cs" />
+    <Compile Include="Entities\KeyEntityAttribute.cs" />
+    <Compile Include="Entities\LiveEntitiesAttribute.cs" />
+    <Compile Include="Entities\RangeContinuity.cs" />
+    <Compile Include="EntityRepository.CrudOverloads.cs" />
+    <Compile Include="EntityRepository.cs" />
+    <Compile Include="EntityRepository.EntityType.cs" />
+    <Compile Include="Events\EntityEvent.cs" />
+    <Compile Include="Events\EntityEventArgs.cs" />
+    <Compile Include="Events\EventRegistration.cs" />
+    <Compile Include="Events\IEntityEventArgs.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="IContextHandler.cs" />
+    <Compile Include="IInternalRepository.cs" />
+    <Compile Include="InternalContextHandler.cs" />
+    <Compile Include="InternalFactory.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="ISave.cs" />
+    <Compile Include="IServiceRegister.cs" />
+    <Compile Include="ITrackingInformation.cs" />
+    <Compile Include="LazyContextHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queryable.cs" />
+    <Compile Include="ReflectionHelper.cs" />
+    <Compile Include="RepositoryAction.cs" />
+    <Compile Include="RepositoryFactory.cs" />
+    <Compile Include="Resources.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="TrackingInformation.cs" />
+    <Compile Include="UnitOfWork.cs" />
+    <Compile Include="UnitOfWorkManager.cs" />
+    <Compile Include="UnityExtensions.cs" />
+    <Compile Include="UpdatePropertyMode.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

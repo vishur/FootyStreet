@@ -1,0 +1,288 @@
+* {
+	margin: 0px; padding: 0px;
+}
+.clear {
+	clear: both;
+}
+a {
+	text-decoration: underline;
+}
+a:hover {
+	text-decoration: none;
+}
+a img {
+	border: 0px currentColor;
+}
+#mainlivedemo {
+	background: url("Images/bg-main.jpg") repeat-y left top rgb(24, 24, 24); padding: 0px 20px; height: 51px; color: rgb(137, 137, 137); border-bottom-color: rgb(83, 83, 83); border-bottom-width: 4px; border-bottom-style: solid;
+}
+#mainlivedemo .main {
+	font-family: Tahoma; position: relative;
+}
+.liveclose {
+	padding: 8px 0px 0px 5px; width: 147px; float: right; position: relative;
+}
+.liveclosei {
+	margin: 0px 0px 10px; overflow: hidden;
+}
+.liveclose img {
+	float: right; display: block; cursor: pointer;
+}
+.prodinfo {
+	margin: 0px -507px 0px -210px; padding: 5px 0px; width: 100%; float: left;
+}
+.ie7 .prodinfo {
+	margin: 0px -507px 0px 0px;
+}
+.prodinfo .border {
+	margin: 0px 487px 0px 230px; padding: 10px 0px 10px 19px; border-left-color: rgb(87, 87, 87); border-left-width: 1px; border-left-style: solid;
+}
+.ie7 .prodinfo .border {
+	margin: 0px 487px 0px 210px;
+}
+.prodinfo span {
+	padding: 0px 18px 0px 0px;
+}
+.prodinfo a {
+	color: rgb(188, 188, 188); text-decoration: underline;
+}
+.prodinfo a:hover {
+	text-decoration: none;
+}
+.prodinfo strong a {
+	color: rgb(188, 188, 188); text-decoration: none;
+}
+.prodinfo strong a:hover {
+	text-decoration: underline;
+}
+.price_choice {
+	background: rgb(47, 47, 47); padding: 7px 10px; width: 335px; height: 37px; float: right; position: relative;
+}
+#price_choice_form {
+	margin: -5px 0px 0px; float: left;
+}
+.price_choice a {
+	margin: 0px 0px 0px 10px; top: 7px; right: 10px; display: inline-block; position: absolute;
+}
+.price_choice p {
+	line-height: 12px; padding-left: 5px; font-size: 10px !important; float: right;
+}
+.price_choice img {
+	vertical-align: bottom;
+}
+.price_choice .price_choice_wrapper {
+	line-height: 21px; overflow: hidden; padding-left: 20px; clear: both; position: relative;
+}
+.price_choice input {
+	left: 0px; top: 5px; position: absolute;
+}
+.mobile .price_choice input {
+	top: 0px;
+}
+.win.gecko .price_choice input {
+	top: 4px;
+}
+.ie7 .price_choice input {
+	left: 0px; top: 0px;
+}
+.price_choice label {
+	color: rgb(181, 181, 181); font-size: 13px;
+}
+#mainlivedemo .main .price_choice label span {
+	font-size: 13px;
+}
+.price_choice .recommended label {
+	color: rgb(255, 255, 255);
+}
+.price_choice .price-value {
+	font-weight: bold;
+}
+.livedemo-logo {
+	width: 190px; float: left;
+}
+.ie7 .livedemo-logo {
+	left: 0px; top: 0px; height: 42px; position: absolute;
+}
+#mainlivedemo .main h3 {
+	padding: 0px 0px 8px; font-size: 12px;
+}
+#mainlivedemo .main p {
+	font-size: 11px;
+}
+#mainlivedemo .main span {
+	font-size: 11px;
+}
+#livedemo #facebook_like_button_wrapper {
+	margin-right: 12px; float: left;
+}
+#livedemo #facebook_like_button {
+	margin: 0px; border: currentColor; width: 45px; height: 21px; overflow: hidden;
+}
+#livedemo .socialproofit-button {
+	float: left; display: none !important;
+}
+#livedemo a.trigger#socialproofit-openclose {
+	
+}
+#livedemo #socialproofit-addList {
+	display: none;
+}
+form {
+	margin: 0px; padding: 0px;
+}
+html {
+	height: 100%;
+}
+body {
+	width: 100%; height: 100%; overflow: hidden; background-color: rgb(255, 255, 255);
+}
+html {
+	-webkit-text-size-adjust: none;
+}
+iframe {
+	width: 100%; background-color: rgb(255, 255, 255);
+}
+#iframelive {
+	width: 100%; background-color: rgb(255, 255, 255);
+}
+.stretched#iframelive {
+	overflow: auto;
+}
+* + html .stretched#iframelive {
+	height: 100%;
+}
+* + html .stretched#iframelive iframe {
+	height: 100%;
+}
+.opera .stretched#iframelive iframe {
+	height: 100%;
+}
+.price-value ins {
+	color: red; text-decoration: none;
+}
+.popupAltTitleDiscountPrice {
+	border: 1px solid rgb(106, 145, 180); color: rgb(0, 0, 0); font-family: "Tahoma"; font-size: 11px; font-weight: normal; display: none; white-space: nowrap; position: absolute; z-index: 1001; cursor: pointer; background-color: rgb(255, 255, 255);
+}
+#altDiv {
+	padding: 2px 4px 3px; border: 1px solid rgb(106, 145, 180); width: 200px; font-family: tahoma; font-size: 11px; visibility: hidden; position: absolute; z-index: 1; background-color: rgb(238, 246, 255);
+}
+.altDiv {
+	padding: 2px 4px 3px; border: 1px solid rgb(106, 145, 180); width: 200px; font-family: tahoma; font-size: 11px; visibility: hidden; position: absolute; z-index: 1; background-color: rgb(238, 246, 255);
+}
+.popupAltTitleDiscountPrice#altDiv {
+	width: auto;
+}
+#gui-ga-joomla-1_7-conversion {
+	position: absolute;
+}
+@media only screen and (max-width:1189px) and (min-width:1100px)
+{
+.prodinfo span {
+	padding: 0px 10px 0px 0px;
+}
+.prodinfo span.last-child {
+	display: none;
+}
+}
+@media only screen and (max-width:1099px) and (min-width:900px)
+{
+.prodinfo span {
+	display: none;
+}
+.prodinfo span.first-child {
+	padding: 0px 10px 0px 0px; display: inline-block;
+}
+}
+@media only screen and (max-width:899px) and (min-width:768px)
+{
+.liveclose {
+	width: 10px;
+}
+#livedemo .socialproofit-button {
+	display: none !important;
+}
+#livedemo #facebook_like_button_wrapper {
+	display: none;
+}
+.prodinfo .border {
+	margin: 0px 340px 0px 230px;
+}
+.ie7 .prodinfo .border {
+	margin: 0px 340px 0px 210px;
+}
+.prodinfo span {
+	display: none;
+}
+.prodinfo span.first-child {
+	padding: 0px 10px 0px 0px; display: inline-block;
+}
+}
+@media only screen and (max-width:767px) and (min-width:600px)
+{
+.liveclose {
+	width: 10px;
+}
+#livedemo .socialproofit-button {
+	display: none !important;
+}
+#livedemo #facebook_like_button_wrapper {
+	display: none;
+}
+.prodinfo {
+	display: none;
+}
+}
+@media only screen and (max-width:599px) and (min-width:410px)
+{
+.liveclose {
+	width: 10px;
+}
+#livedemo .socialproofit-button {
+	display: none !important;
+}
+#livedemo #facebook_like_button_wrapper {
+	display: none;
+}
+.prodinfo {
+	display: none;
+}
+.livedemo-logo {
+	display: none;
+}
+.price_choice {
+	float: left;
+}
+}
+@media only screen and (max-width:409px)
+{
+.liveclose {
+	width: 10px;
+}
+#livedemo .socialproofit-button {
+	display: none !important;
+}
+#livedemo #facebook_like_button_wrapper {
+	display: none;
+}
+.prodinfo {
+	display: none;
+}
+.livedemo-logo {
+	display: none;
+}
+.price_choice {
+	padding: 7px 0px; width: auto; height: auto; float: left;
+}
+#price_choice_form {
+	display: none;
+}
+.price_choice a {
+	left: 0px;
+}
+.opera .price_choice a {
+	left: 0px; top: 0px; right: 0px; position: inherit;
+}
+.price_choice p {
+	padding-left: 0px; float: left;
+}
+}

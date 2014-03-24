@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AuditEntityIsMissingPropertiesErrorMessage" xml:space="preserve">
+    <value>Business Logic error.  Audit Entity is missing required properties; {0} is using {1} as it's Audit Entity, and by definition an Audit Entity must have the following properties. {{ public string AuditUserName {{ get; set; }} public DateTime AuditDate {{ get; set; }} }}To Fix : Goto "{2}" and add a Properties.</value>
+    <comment>Formatting string for the error message occuring when an Audit Entity does not have the IAuditTracker properties defined</comment>
+  </data>
+  <data name="BeginUnitOfWorkException" xml:space="preserve">
+    <value>A previous unit of work was not closed.  This unit of work was created at the following call stack: {0}.</value>
+    <comment>An exception message for when two unit of works are created on one thread.</comment>
+  </data>
+  <data name="CompletedBusinessLogic" xml:space="preserve">
+    <value>Completed processing Business Logic for assembly: {0}.</value>
+  </data>
+  <data name="CreatorHasDifferentGenericErrorMessage" xml:space="preserve">
+    <value>Business Logic error.  ICreate{6}&lt;&gt; does not have the correct {6}EntityType. {0} : ICreate{6}&lt;{1}&gt; does not use the type TEntity  as "{2}". To Fix : Goto "{3}" and change the generic of ICreate{6} to "{4}" or remove DBSet&lt;{2}&gt; from DbContext "{5}" to use "{1}" as your {6} entity."</value>
+    <comment>Formatting string for the error message occuring when an Audit Entity is found both by convention and configuration.</comment>
+  </data>
+  <data name="CreatorsGenericNotInDbContextErrorMessage" xml:space="preserve">
+    <value>Business Logic error.  DbSet is not in DbContext; "{0}" : ICreate{5}&lt;{1}&gt;uses DbContext "{2}". This context does not have {1} defined. To Fix : Goto "{3}" and add a Property of type DbSet&lt;{4}&gt;.</value>
+    <comment>Formatting string for the error message occuring when an Audit Entity found by configuration is not in the DbContext</comment>
+  </data>
+  <data name="DateRangeMissingKey" xml:space="preserve">
+    <value>Business Logic error.  {0} has the properties BeginDate and EndDate, in order for the logic surrounding date ranges to work, you must specify a [RangeUniqueKey] on the parent relationship.</value>
+    <comment>Formatting string for the error message occuring when an Date Range is Missing the Unique Key.</comment>
+  </data>
+  <data name="EntityIsUsedByMultipleRepositoriesErrorMessage" xml:space="preserve">
+    <value>Business Logic error.  Entity is the primary entity of multiple repositories. {0} is used by both {1} and {2}.  You can only have one repository per entity.</value>
+    <comment>Formatting string for the error message occuring when an Entity is used by more than on Repository as it's primary entity.</comment>
+  </data>
+  <data name="EntityNotInDbContextErrorMessage" xml:space="preserve">
+    <value>Business Logic error.  DbSet is not in DbContext. "{0}" : EntityRepository&lt;TDbContext, TEntity, ...&gt; has TDbContext of "{1}" which does not have a TEntity "{2}". To Fix : Goto "{3}" and add a Property of type DbSet&lt;{2}&gt;.</value>
+    <comment>Formatting string for the error message occuring when an Entity from the repository is not defined in the DbContext</comment>
+  </data>
+  <data name="InvalidPropertyMappingErrorMessage" xml:space="preserve">
+    <value>Business Logic error.  Unable to map properties from entity {0} to audit {1}.  Property {2} was not mapped properly. Check name, case, type, read, and write of the properties, or implement ICreateAudit&lt;{1}&gt; on {0}.</value>
+    <comment>Formatting string for the error message occuring when a properties are not mapped one to one between the Live and Audit Entities</comment>
+  </data>
+  <data name="MappedToDefaultRepository" xml:space="preserve">
+    <value>       IEntityRepository&lt;{0}&gt; was mapped to DefaultRepository&lt;{1}, {0}&gt;</value>
+  </data>
+  <data name="MappedToRepository" xml:space="preserve">
+    <value>        IEntityRepository&lt;{0}&gt; was mapped to {1}</value>
+  </data>
+  <data name="MultipleDbSetErrorMessage" xml:space="preserve">
+    <value>BusinessLogic error.  Entity type "{0}" is defined in two or more DbSets in "{1}" : DbContext. To Fix : Goto "{2}" and make sure there is only one Property of type DbSet&lt;{0}&gt;.</value>
+    <comment>Formatting string for the error message occuring when DbSets are used for the same Entities</comment>
+  </data>
+  <data name="NamespaceNotFoundErrorMessage" xml:space="preserve">
+    <value>BusinessLogic error.  Namespace(s) in BusinessLogic Attribute are not found: "{0}". To Fix : Locate the [assembly: BusinessLogic(...)] attribute in the properties, and validate the namespaces.</value>
+    <comment>Formatting string for the error message occuring when a namespace is not in the assembly.</comment>
+  </data>
+  <data name="NoDefaultConstructorForAuditErrorMessage" xml:space="preserve">
+    <value>Audit Entity {0} a constructor that takes 0 arguments.</value>
+    <comment>Formatting string for the error message occuring when the convention based Audit Entity does not have a default constructor.</comment>
+  </data>
+  <data name="PleaseCallRepositoryRegistrarRegisterUnity" xml:space="preserve">
+    <value>Please call RepositoryRegistrar.Register(unityContainer) as part of your initialization. This class, located in Framework.Data.Repository, registers a mapping from IUnitOfWorkFactory to UnitOfWorkFactory and from IObjectSourceManagerFactory to ObjectSourceManagerFactory.
+ If you want a different mapping than this default, you may register your own mappings of IUnitOfWorkFactory and IObjectSourceManagerFactory to your own implementations.</value>
+    <comment>PleaseCallRepositoryRegistrarRegisterUnity description</comment>
+  </data>
+  <data name="ReferenceTableDatabaseName" xml:space="preserve">
+    <value>ReferenceTableDatabaseName</value>
+    <comment>ReferenceTableDatabaseName description</comment>
+  </data>
+  <data name="ReferenceTablesSectionName" xml:space="preserve">
+    <value>framework.data.referencetables</value>
+    <comment>FrameworkDataReferencetables description</comment>
+  </data>
+  <data name="RegisterIUnitOfWorkMapping" xml:space="preserve">
+    <value>You must register a mapping from IUnitOfWork to an implementation of IUnitOfWork.  You can use one of the provided implementations or your own.  The implementations provided are Framework.Data.Repository.EF.DesktopUnitWork (appropriate for unit testing for example) and Framework.Data.WebIntegration.WebUnitOfWork (appropriate for use in ASP.NET applications).</value>
+    <comment>RegisterIUnitOfWorkMapping description</comment>
+  </data>
+  <data name="RangeMustBeAContinuous" xml:space="preserve">
+    <value>A {0} must be a continuous range.  Each end date must be one day off from the next begin date.</value>
+    <comment>RangeMustBeAContinuous description</comment>
+  </data>
+  <data name="RangeCannotOverlap" xml:space="preserve">
+    <value>A {0} cannot have have its ranges overlap.  The end date of a previous date must be at least one day before the begin of the next range.</value>
+    <comment>RangeCannotOverlap description</comment>
+  </data>
+  <data name="RangeEndDateNull" xml:space="preserve">
+    <value>A {0} cannot have have an end date null for any date except its last.</value>
+    <comment>RangeEndDateNull description</comment>
+  </data>
+  <data name="RangeEndDateNotNull" xml:space="preserve">
+    <value>A {0} cannot have have an end date for its last range element.</value>
+    <comment>RangeEndDateNotNull description</comment>
+  </data>
+</root>

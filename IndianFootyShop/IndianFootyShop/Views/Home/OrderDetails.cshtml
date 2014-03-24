@@ -1,0 +1,576 @@
+﻿@{
+    ViewBag.Title = "OrderDetails";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<div id="columns" class="container ">
+    <div class="breadcrumb">
+        <div class="breadcrumb_inset">
+            <a class="breadcrumb-home" href="http://livedemo00.template-help.com/prestashop_46849/" title="Return to Home"><i class="icon-home"></i></a>
+            <span class="navigation-pipe ">&gt;</span>
+            <span class="navigation_page">Your shopping cart</span>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="loader_page">
+
+            <div id="center_column" class="center_column span9 clearfix">
+
+
+                <!-- Breadcrumb -->
+                <!-- /Breadcrumb -->
+
+                <h1 id="cart_title"><span>Shopping-cart summary</span></h1>
+
+
+
+
+
+                <script>
+                    $(document).ready(function () {
+                        $('#order_steps li:even').addClass('even');
+                        $('#order_steps li:odd').addClass('odd');
+                        $('.list-order-step li').last().addClass('last');
+                    });
+                </script>
+                <!-- Steps -->
+                <ul id="order_steps" class="step1">
+                    <li class="step_current even">
+                        <span><span>01</span> Summary</span>
+                    </li>
+                    <li class="step_todo odd">
+                        <span><span>02</span> Login</span>
+                    </li>
+                    <li class="step_todo even">
+                        <span><span>03</span> Address</span>
+                    </li>
+                    <li class="step_todo odd">
+                        <span><span>04</span> Shipping</span>
+                    </li>
+                    <li id="step_end" class="step_todo even">
+                        <span><span>05</span> Payment</span>
+                    </li>
+                </ul>
+                <!-- /Steps -->
+
+
+
+
+                <script type="text/javascript">
+                    // <![CDATA[
+                    var currencySign = '$';
+                    var currencyRate = '1';
+                    var currencyFormat = '1';
+                    var currencyBlank = '0';
+                    var txtProduct = "product";
+                    var txtProducts = "products";
+                    var deliveryAddress = 0;
+                    // ]]>
+                </script>
+                <p id="emptyCartWarning" class="warning hidden">Your shopping cart is empty.</p>
+
+                <p class="ordercart-title">Your shopping cart contains: <span id="summary_products_quantity">1 product</span></p>
+                <div id="order-detail-content" class="table_block">
+                    <table id="cart_summary" class="std">
+                        <thead>
+                        </thead>
+                        <tfoot>
+                            <tr class="cart_total_price ">
+                                <td>Total products</td>
+                                <td class="price" id="total_product">$629</td>
+                            </tr>
+                            <tr class="cart_total_voucher   hidden">
+                                <td>
+                                    Total gift-wrapping cost:
+                                </td>
+                                <td class="price-discount price" id="total_discount">
+                                    $0
+                                </td>
+                            </tr>
+                            <tr class="cart_total_voucher  hidden">
+                                <td>
+                                    Total gift-wrapping:
+                                </td>
+                                <td class="price-discount price" id="total_wrapping">
+                                    $0
+                                </td>
+                            </tr>
+                            <tr class="cart_total_delivery ">
+                                <td>Total shipping</td>
+                                <td class="price" id="total_shipping">$2</td>
+                            </tr>
+                            <tr class="cart_total_price ">
+                                <td>Total (tax excl.)</td>
+                                <td class="price" id="total_price_without_tax">
+                                    $631
+                                </td>
+                            </tr>
+                            <tr class="cart_total_tax">
+                                <td>Total tax</td>
+                                <td class="price" id="total_tax">$0</td>
+                            </tr>
+                            <tr class="cart_total_price cart_last_tr">
+                                <td class="total_price_container" id="total_price_container">
+                                    Total
+                                </td>
+                                <td class="price" id="total_price">
+                                    $631
+                                </td>
+
+                            </tr>
+
+                        </tfoot>
+                        <tbody>
+
+
+                            <tr id="product_2_0_0_0" class="bordercolor last_item  cart_item address_0 odd">
+
+                                <td class="cart_product">
+                                    <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=2&amp;controller=product&amp;id_lang=1">
+                                        <img src="http://livedemo00.template-help.com/prestashop_46849/img/p/9/9-medium_default.jpg" alt="Btrease Vaers®">
+                                    </a>
+                                </td>
+                                <td class="cart">
+                                    <h5><a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=2&amp;controller=product&amp;id_lang=1">Btrease Vaers®</a></h5>
+                                    <div class="clearfix insset-bottom">
+                                        <span class="title-th">Ref.:</span>  --
+                                    </div>
+                                    <div class="clearfix insset-bottom">
+                                        <span class="title-th">Unit price:</span>
+                                        <span class="price" id="product_price_2_0_0">
+                                            $629
+                                        </span>
+                                    </div>
+                                    <div class="clearfix insset-bottom">
+                                        <span class="title-th cart_quantity_title">Qty:</span>
+
+                                        <div class="cart_quantity">
+                                            <div id="cart_quantity_button" class="cart_quantity_button f_left">
+
+                                                <a rel="nofollow" class="cart_quantity_down" id="cart_quantity_down_2_0_0_0" href="http://livedemo00.template-help.com/prestashop_46849/index.php?controller=cart&amp;add=&amp;id_product=2&amp;ipa=0&amp;id_address_delivery=0&amp;op=down&amp;token=ffc916940df8072ed4261aac6c53678d" title="Subtract">
+                                                    <img src="http://livedemo00.template-help.com/prestashop_46849/themes/theme788/img/icon/quantity_down.gif" alt="Subtract" width="23" height="24">
+                                                </a>
+                                                <input type="hidden" value="1" name="quantity_2_0_0_0_hidden">
+                                                <input size="2" type="text" autocomplete="off" class="cart_quantity_input" value="1" name="quantity_2_0_0_0">
+
+                                                <a rel="nofollow" class="cart_quantity_up" id="cart_quantity_up_2_0_0_0" href="http://livedemo00.template-help.com/prestashop_46849/index.php?controller=cart&amp;add=&amp;id_product=2&amp;ipa=0&amp;id_address_delivery=0&amp;token=ffc916940df8072ed4261aac6c53678d" title="Add"><img src="http://livedemo00.template-help.com/prestashop_46849/themes/theme788/img/icon/quantity_up.gif" alt="Add" width="23" height="24"></a>
+
+                                            </div>
+
+
+
+
+                                            <div class="div_cart_quantity_delete">
+                                                <a rel="nofollow" class="cart_quantity_delete" id="2_0_0_0" href="http://livedemo00.template-help.com/prestashop_46849/index.php?controller=cart&amp;delete=1&amp;id_product=2&amp;ipa=0&amp;id_address_delivery=0&amp;token=ffc916940df8072ed4261aac6c53678d"><i class="icon-trash"></i></a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <span class="title-th">Total:</span>
+                                    <span class="price total-pr" id="total_product_price_2_0_0">
+                                        $629
+                                    </span>
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="cart_voucher" class="table_block">
+                </div>
+
+
+                <div id="HOOK_SHOPPING_CART">
+                    <script type="text/javascript">
+                        // <![CDATA[
+                        var taxEnabled = "1";
+                        var displayPrice = "1";
+                        var currencySign = '$';
+                        var currencyRate = '1';
+                        var currencyFormat = '1';
+                        var currencyBlank = '0';
+                        var id_carrier = '11';
+                        var id_state = '1';
+                        var SE_RedirectTS = "Refreshing the page and updating your cart...";
+                        var SE_RefreshStateTS = "Checking available states...";
+                        var SE_RetrievingInfoTS = "Retrieving information...";
+                        var SE_RefreshMethod = 0;
+                        var txtFree = "Free!";
+                        PS_SE_HandleEvent();
+                        //]]>
+                    </script>
+                    <form class="std" id="compare_shipping_form" method="post" action="#">
+                        <fieldset id="compare_shipping">
+                            <h3>Estimate the cost of shipping &amp; taxes.</h3>
+                            <p>
+                                <label for="id_country">Country</label>
+                                <select name="id_country" id="id_country">
+                                    <option value="38">Algeria</option>
+                                    <option value="39">American Samoa</option>
+                                    <option value="40">Andorra</option>
+                                    <option value="41">Angola</option>
+                                    <option value="42">Anguilla</option>
+                                    <option value="43">Antigua and Barbuda</option>
+                                    <option value="44">Argentina</option>
+                                    <option value="45">Armenia</option>
+                                    <option value="46">Aruba</option>
+                                    <option value="24">Australia</option>
+                                    <option value="2">Austria</option>
+                                    <option value="47">Azerbaijan</option>
+                                    <option value="48">Bahamas</option>
+                                    <option value="49">Bahrain</option>
+                                    <option value="50">Bangladesh</option>
+                                    <option value="3">Belgium</option>
+                                    <option value="34">Bolivia</option>
+                                    <option value="4">Canada</option>
+                                    <option value="5">China</option>
+                                    <option value="16">Czech Republic</option>
+                                    <option value="20">Denmark</option>
+                                    <option value="7">Finland</option>
+                                    <option value="8">France</option>
+                                    <option value="1">Germany</option>
+                                    <option value="9">Greece</option>
+                                    <option value="22">HongKong</option>
+                                    <option value="26">Ireland</option>
+                                    <option value="29">Israel</option>
+                                    <option value="10">Italy</option>
+                                    <option value="32">Ivory Coast</option>
+                                    <option value="11">Japan</option>
+                                    <option value="12">Luxemburg</option>
+                                    <option value="35">Mauritius</option>
+                                    <option value="13">Netherlands</option>
+                                    <option value="27">New Zealand</option>
+                                    <option value="31">Nigeria</option>
+                                    <option value="23">Norway</option>
+                                    <option value="14">Poland</option>
+                                    <option value="15">Portugal</option>
+                                    <option value="36">Romania</option>
+                                    <option value="25">Singapore</option>
+                                    <option value="37">Slovakia</option>
+                                    <option value="30">South Africa</option>
+                                    <option value="28">South Korea</option>
+                                    <option value="6">Spain</option>
+                                    <option value="18">Sweden</option>
+                                    <option value="19">Switzerland</option>
+                                    <option value="33">Togo</option>
+                                    <option value="17">United Kingdom</option>
+                                    <option value="21" selected="selected">United States</option>
+                                </select>
+                            </p>
+                            <p id="states" style="">
+                                <label for="id_state">State</label>
+                                <select name="id_state" id="id_state">
+
+                                    <option value="1" selected="selected">Alabama</option>
+                                    <option value="2">Alaska</option>
+                                    <option value="3">Arizona</option>
+                                    <option value="4">Arkansas</option>
+                                    <option value="5">California</option>
+                                    <option value="6">Colorado</option>
+                                    <option value="7">Connecticut</option>
+                                    <option value="8">Delaware</option>
+                                    <option value="9">Florida</option>
+                                    <option value="10">Georgia</option>
+                                    <option value="11">Hawaii</option>
+                                    <option value="12">Idaho</option>
+                                    <option value="13">Illinois</option>
+                                    <option value="14">Indiana</option>
+                                    <option value="15">Iowa</option>
+                                    <option value="16">Kansas</option>
+                                    <option value="17">Kentucky</option>
+                                    <option value="18">Louisiana</option>
+                                    <option value="19">Maine</option>
+                                    <option value="20">Maryland</option>
+                                    <option value="21">Massachusetts</option>
+                                    <option value="22">Michigan</option>
+                                    <option value="23">Minnesota</option>
+                                    <option value="24">Mississippi</option>
+                                    <option value="25">Missouri</option>
+                                    <option value="26">Montana</option>
+                                    <option value="27">Nebraska</option>
+                                    <option value="28">Nevada</option>
+                                    <option value="29">New Hampshire</option>
+                                    <option value="30">New Jersey</option>
+                                    <option value="31">New Mexico</option>
+                                    <option value="32">New York</option>
+                                    <option value="33">North Carolina</option>
+                                    <option value="34">North Dakota</option>
+                                    <option value="35">Ohio</option>
+                                    <option value="36">Oklahoma</option>
+                                    <option value="37">Oregon</option>
+                                    <option value="38">Pennsylvania</option>
+                                    <option value="39">Rhode Island</option>
+                                    <option value="40">South Carolina</option>
+                                    <option value="41">South Dakota</option>
+                                    <option value="42">Tennessee</option>
+                                    <option value="43">Texas</option>
+                                    <option value="44">Utah</option>
+                                    <option value="45">Vermont</option>
+                                    <option value="46">Virginia</option>
+                                    <option value="47">Washington</option>
+                                    <option value="48">West Virginia</option>
+                                    <option value="49">Wisconsin</option>
+                                    <option value="50">Wyoming</option>
+                                    <option value="51">Puerto Rico</option>
+                                    <option value="52">US Virgin Islands</option>
+                                    <option value="53">District of Columbia</option>
+                                </select>
+                            </p>
+                            <p>
+                                <label for="zipcode">Zip Code</label>
+                                <input type="text" name="zipcode" id="zipcode" value=""> (Needed for certain carriers.)
+                            </p>
+                            <div id="carriercompare_errors" style="display: none;">
+                                <ul id="carriercompare_errors_list"></ul><br>
+                            </div>
+                            <div id="SE_AjaxDisplay" style="display: none;">
+                                <img src="http://livedemo00.template-help.com/prestashop_46849/modules/carriercompare/loader.gif"><br>
+                                <p></p>
+                            </div>
+                            <div id="availableCarriers" style="">
+                                <table cellspacing="0" cellpadding="0" id="availableCarriers_table" class="std">
+                                    <thead>
+                                        <tr>
+                                            <th class="carrier_action first_item"></th>
+                                            <th class="carrier_name item">Carrier</th>
+                                            <th class="carrier_infos item">Information</th>
+                                            <th class="carrier_price last_item">Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="carriers_list">
+
+
+                                        <tr class="item"><td class="carrier_action radio"><input type="radio" name="id_carrier" value="9" id="id_carrier9"></td><td class="carrier_name"><label for="id_carrier9"><img src="~/Content/themes/base/images/9.jpg" alt="My carrier"></label></td><td class="carrier_infos">Delivery next day!</td><td class="carrier_price"><span class="price">$2</span></td></tr>
+                                        <tr class="alternate_item"><td class="carrier_action radio"><input type="radio" name="id_carrier" value="11" id="id_carrier11" checked="checked"></td><td class="carrier_name"><label for="id_carrier11"><img src="~/Content/themes/base/images/11.jpg" alt="my shop"></label></td><td class="carrier_infos">Pick up in-store</td><td class="carrier_price"><span class="price">$2</span></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="warning center" id="noCarrier" style="display: none;">No carrier has been made available for this selection.</p>
+                            <p class="SE_SubmitRefreshCard">
+                                <input class="exclusive_large" id="carriercompare_submit" type="submit" name="carriercompare_submit" value="Update cart">
+                                <input id="update_carriers_list" type="button" class="exclusive_large" value="Update carrier list">
+                            </p>
+                        </fieldset>
+                    </form>
+                    <script type="text/javascript">
+                        $("#carouselproductcross").carouFredSel({
+                            debug: true,
+                            circular: true,
+                            infinite: true,
+                            responsive: true,
+                            align: "center",
+                            width: '100%',
+                            auto: {
+                                play: 1,
+                                timeoutDuration: 20000
+                            },
+
+                            items: {
+
+                                visible: {
+                                    min: 2,
+                                    max: 6
+                                },
+                                width: 167,
+
+                            },
+                            scroll: {
+                                items: 1,
+                                pauseOnHover: false
+                            },
+                            prev: {
+                                button: "#cross_prev"
+                            },
+                            next: {
+                                button: "#cross_next"
+                            },
+                            swipe: {
+                                onMouse: true,
+                                onTouch: true
+                            }
+                        });
+                    </script>
+                    <!-- MODULE Loyalty -->
+                    <p id="loyalty">
+                        <i class="icon-money"></i>
+                        By checking out this shopping cart you can collect up to <b>
+                            62 loyalty points
+                        </b>
+                        that can be converted into a voucher of $12.<br>
+                    </p>
+                    <!-- END : MODULE Loyalty -->
+                </div>
+
+
+
+
+                <p class="cart_navigation  clearfix inner-top">
+                    <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?controller=order&amp;step=1" class="exclusive standard-checkout" title="Next">Next »</a>
+                    <a href="http://livedemo00.template-help.com/prestashop_46849/" class="button_large" title="Continue shopping">« Continue shopping</a>
+                </p>
+
+
+            </div>
+
+            <!-- Right -->
+            <aside id="right_column" class="span3 column right_home">
+
+                <!-- MODULE Block best sellers -->
+                <section id="blockbestsellers" class="block products_block column_box">
+                    <h4><span>Top sellers</span><i class="column_icon_toggle icon-plus-sign"></i></h4>
+                    <div class="block_content toggle_content">
+                        <ul>
+                            <li class="clearfix shop_box">
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=2&amp;controller=product&amp;id_lang=1" title=""><img src="http://livedemo00.template-help.com/prestashop_46849/img/p/9/9-small_default.jpg" alt=""></a>
+                                <div>
+                                    <h5><a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=2&amp;controller=product&amp;id_lang=1" title="Btrease Vaers®">Btrease Vaers®</a></h5>
+                                    <p class="product_descr"> There is nothing better than charming coffee aroma which flows into...</p>
+                                </div>
+                            </li>
+                            <li class="clearfix shop_box">
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=4&amp;controller=product&amp;id_lang=1" title=""><img src="http://livedemo00.template-help.com/prestashop_46849/img/p/2/5/25-small_default.jpg" alt=""></a>
+                                <div>
+                                    <h5><a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=4&amp;controller=product&amp;id_lang=1" title="Yapuytasa®">Yapuytasa®</a></h5>
+                                    <p class="product_descr"> There is nothing better than charming coffee aroma which flows into...</p>
+                                </div>
+                            </li>
+                            <li class="clearfix shop_box">
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=6&amp;controller=product&amp;id_lang=1" title=""><img src="http://livedemo00.template-help.com/prestashop_46849/img/p/4/1/41-small_default.jpg" alt=""></a>
+                                <div>
+                                    <h5><a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=6&amp;controller=product&amp;id_lang=1" title="Btrease Vaers®">Btrease Vaers®</a></h5>
+                                    <p class="product_descr"> There is nothing better than charming coffee aroma which flows into...</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?controller=best-sales" title="All best sellers" class="button_large">All best sellers</a>
+                    </div>
+                </section>
+                <!-- MODULE Block new products -->
+                <section id="new-products_block_right" class="block products_block column_box">
+                    <h4 class="title_block"><span>New products</span> <i class="column_icon_toggle icon-plus-sign"></i></h4>
+                    <div class="block_content toggle_content">
+                        <ul class="products">
+                            <li class="shop_box clearfix first_item">
+
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=1&amp;controller=product&amp;id_lang=1" title=""><img src="http://livedemo00.template-help.com/prestashop_46849/img/p/1/1-medium_default.jpg" alt=""></a>
+
+                                <div>
+                                    <h5 class="s_title_block">
+                                        <a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=1&amp;controller=product&amp;id_lang=1" title="Miuyas Laytsas®">Miuyas Laytsas®</a>
+                                    </h5>
+                                    <p class="product_desc">There is nothing better than charming coffee aroma which...</p>
+                                    <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=1&amp;controller=product&amp;id_lang=1" class="lnk_more">Read more <i class="icon-caret-right"></i></a>
+                                </div>
+                            </li>
+                            <li class="shop_box clearfix item">
+
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=2&amp;controller=product&amp;id_lang=1" title=""><img src="http://livedemo00.template-help.com/prestashop_46849/img/p/9/9-medium_default.jpg" alt=""></a>
+
+                                <div>
+                                    <h5 class="s_title_block">
+                                        <a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=2&amp;controller=product&amp;id_lang=1" title="Btrease Vaers®">Btrease Vaers®</a>
+                                    </h5>
+                                    <p class="product_desc">There is nothing better than charming coffee aroma which...</p>
+                                    <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=2&amp;controller=product&amp;id_lang=1" class="lnk_more">Read more <i class="icon-caret-right"></i></a>
+                                </div>
+                            </li>
+                            <li class="shop_box clearfix item">
+
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=3&amp;controller=product&amp;id_lang=1" title=""><img src="http://livedemo00.template-help.com/prestashop_46849/img/p/1/7/17-medium_default.jpg" alt=""></a>
+
+                                <div>
+                                    <h5 class="s_title_block">
+                                        <a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=3&amp;controller=product&amp;id_lang=1" title="Ketyasas vtreasas®">Ketyasas vtreasas®</a>
+                                    </h5>
+                                    <p class="product_desc">There is nothing better than charming coffee aroma which...</p>
+                                    <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=3&amp;controller=product&amp;id_lang=1" class="lnk_more">Read more <i class="icon-caret-right"></i></a>
+                                </div>
+                            </li>
+                            <li class="shop_box clearfix item">
+
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=4&amp;controller=product&amp;id_lang=1" title=""><img src="http://livedemo00.template-help.com/prestashop_46849/img/p/2/5/25-medium_default.jpg" alt=""></a>
+
+                                <div>
+                                    <h5 class="s_title_block">
+                                        <a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=4&amp;controller=product&amp;id_lang=1" title="Yapuytasa®">Yapuytasa®</a>
+                                    </h5>
+                                    <p class="product_desc">There is nothing better than charming coffee aroma which...</p>
+                                    <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=4&amp;controller=product&amp;id_lang=1" class="lnk_more">Read more <i class="icon-caret-right"></i></a>
+                                </div>
+                            </li>
+                            <li class="shop_box clearfix last_item">
+
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=5&amp;controller=product&amp;id_lang=1" title=""><img src="http://livedemo00.template-help.com/prestashop_46849/img/p/3/3/33-medium_default.jpg" alt=""></a>
+
+                                <div>
+                                    <h5 class="s_title_block">
+                                        <a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=5&amp;controller=product&amp;id_lang=1" title="Miuyas Laytsas">Miuyas Laytsas</a>
+                                    </h5>
+                                    <p class="product_desc">There is nothing better than charming coffee aroma which...</p>
+                                    <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=5&amp;controller=product&amp;id_lang=1" class="lnk_more">Read more <i class="icon-caret-right"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?controller=new-products" title="All new products" class="button_large">All new products</a>
+                    </div>
+                </section>
+                <!-- /MODULE Block new products -->
+                <!-- MODULE Block specials -->
+                <section id="specials" class="block products_block column_box">
+                    <h4><span>Specials</span><i class="column_icon_toggle icon-plus-sign"></i></h4>
+                    <div class="block_content toggle_content">
+                        <ul>
+                            <li class="shop_box  clearfix">
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=10&amp;controller=product&amp;id_lang=1"><img src="http://livedemo00.template-help.com/prestashop_46849/img/p/7/3/73-small_default.jpg" alt="" title="Btrease Vaers®"></a>
+                                <div>
+                                    <h5><a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=10&amp;controller=product&amp;id_lang=1" title="Btrease Vaers®">Btrease Vaers®</a></h5>
+                                    <p class="product_desc"> There is nothing better than...</p>
+                                    <span class="price">$658</span>
+                                    <span class="reduction price">(-13%)</span>
+
+                                    <span class="price-discount price">$757</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <a class="button_large" href="http://livedemo00.template-help.com/prestashop_46849/index.php?controller=prices-drop" title="All specials">All specials</a>
+                    </div>
+                </section>
+                <!-- /MODULE Block specials -->
+                <!-- Block CMS module -->
+                <section class="block blockcms column_box">
+                    <h4><span>Information</span><i class="column_icon_toggle icon-plus-sign"></i></h4>
+                    <ul class="store_list toggle_content clearfix">
+                        <li><a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_cms=1&amp;controller=cms&amp;id_lang=1" title="Delivery"><i class="icon-ok"></i>Delivery</a></li>
+                        <li><a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_cms=2&amp;controller=cms&amp;id_lang=1" title="Legal Notice"><i class="icon-ok"></i>Legal Notice</a></li>
+                        <li><a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_cms=3&amp;controller=cms&amp;id_lang=1" title="Terms and conditions of use"><i class="icon-ok"></i>Terms and conditions of use</a></li>
+                        <li><a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_cms=4&amp;controller=cms&amp;id_lang=1" title="About us"><i class="icon-ok"></i>About us</a></li>
+                        <li><a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_cms=5&amp;controller=cms&amp;id_lang=1" title="Secure payment"><i class="icon-ok"></i>Secure payment</a></li>
+                        <li><a href="http://livedemo00.template-help.com/prestashop_46849/index.php?controller=stores" title="Our stores"><i class="icon-ok"></i>Our stores</a></li>
+                    </ul>
+                </section>
+                <!-- /Block CMS module -->
+                <!-- Block links module -->
+                <section id="links_block_left" class="block column_box">
+                    <h4>
+                        <span>
+                            Block link
+                        </span>
+                        <i class="column_icon_toggle icon-plus-sign"></i>
+                    </h4>
+                    <ul class="block_content store_list toggle_content">
+
+                        <li><a href="http://facebook.com"><i class="icon-ok"></i>Facebook Link</a></li>
+
+                        <li><a href="http://blog.templatemonster.com/"><i class="icon-ok"></i>Our Blog</a></li>
+
+                        <li><a href="http://twitter.com/"><i class="icon-ok"></i>Twitter Link</a></li>
+                    </ul>
+                </section>
+                <!-- /Block links module -->
+
+            </aside>
+        </div>
+    </div>
+</div>

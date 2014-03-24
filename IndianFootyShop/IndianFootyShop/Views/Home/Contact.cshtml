@@ -1,0 +1,230 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<div id="columns" class="container ">
+    <div class="breadcrumb">
+        <div class="breadcrumb_inset">
+            <a class="breadcrumb-home" href="http://livedemo00.template-help.com/prestashop_46849/" title="Return to Home"><i class="icon-home"></i></a>
+            <span class="navigation-pipe ">&gt;</span>
+            <span class="navigation_page">Contact</span>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="loader_page">
+
+            <div id="center_column" class="center_column span9 clearfix">
+
+
+                <!-- Breadcrumb -->
+                <!-- /Breadcrumb -->
+
+                <h1><span>Customer service - Contact us</span></h1>
+                <p class="title-pagecontact"><i class="icon-comment-alt"></i>For questions about an order or for more information about our products.</p>
+
+
+                <form id="contact_form" action="/prestashop_46849/index.php?controller=contact" method="post" class="std" enctype="multipart/form-data">
+                    <fieldset class="titled_box">
+                        <h2><span>send a message</span></h2>
+                        <p class="select">
+                            <label for="id_contact">Subject Heading</label>
+                            <select id="id_contact" name="id_contact" onchange="showElemFromSelect('id_contact', 'desc_contact')">
+                                <option value="0">-- Choose --</option>
+                                <option value="2">Customer service</option>
+                                <option value="1">Webmaster</option>
+                            </select>
+                        </p>
+                        <p id="desc_contact0" class="desc_contact" style="">&nbsp;</p>
+                        <p id="desc_contact2" class="desc_contact hidden" style="display: none;">
+                            For any question about a product, an order
+                        </p>
+                        <p id="desc_contact1" class="desc_contact hidden" style="display: none;">
+                            If a technical problem occurs on this website
+                        </p>
+                        <p class="text">
+                            <label for="email">Email address</label>
+                            <input type="email" id="email" name="from" value="">
+                        </p>
+                        <p class="text select">
+                            <label for="id_order">Order Reference</label>
+                            <input type="text" name="id_order" id="id_order" value="">
+                        </p>
+                        <p class="text upload-file">
+                            <label for="fileUpload">Attach File</label>
+                            <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+                            <div class="uploader" id="uniform-fileUpload"><input type="file" name="fileUpload" id="fileUpload"><span class="filename" style="-webkit-user-select: none;">No file selected</span><span class="action" style="-webkit-user-select: none;">Choose File</span></div>
+                        </p>
+                        <p class="textarea">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="15" cols="10"></textarea>
+                        </p>
+                        <p class="submit">
+                            <input class="button" type="submit" name="submitMessage" id="submitMessage" value="Send" onclick="$(this).fadeOut('slow');">
+                        </p>
+                        <img id="bigpic" src="" alt="" style="display:none"/>
+                    </fieldset>
+                </form>
+
+            </div>
+
+            <!-- Right -->
+            <aside id="right_column" class="span3 column right_home">
+
+                <!-- MODULE Block best sellers -->
+                <section id="blockbestsellers" class="block products_block column_box">
+                    <h4><span>Top sellers</span><i class="column_icon_toggle icon-plus-sign"></i></h4>
+                    <div class="block_content toggle_content">
+                        <ul>
+                            <li class="clearfix shop_box">
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=2&amp;controller=product&amp;id_lang=1" title=""><img src="http://livedemo00.template-help.com/prestashop_46849/img/p/9/9-small_default.jpg" alt=""></a>
+                                <div>
+                                    <h5><a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=2&amp;controller=product&amp;id_lang=1" title="Btrease Vaers®">Btrease Vaers®</a></h5>
+                                    <p class="product_descr"> There is nothing better than charming coffee aroma which flows into...</p>
+                                </div>
+                            </li>
+                            <li class="clearfix shop_box">
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=4&amp;controller=product&amp;id_lang=1" title=""><img src="http://livedemo00.template-help.com/prestashop_46849/img/p/2/5/25-small_default.jpg" alt=""></a>
+                                <div>
+                                    <h5><a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=4&amp;controller=product&amp;id_lang=1" title="Yapuytasa®">Yapuytasa®</a></h5>
+                                    <p class="product_descr"> There is nothing better than charming coffee aroma which flows into...</p>
+                                </div>
+                            </li>
+                            <li class="clearfix shop_box">
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=6&amp;controller=product&amp;id_lang=1" title=""><img src="http://livedemo00.template-help.com/prestashop_46849/img/p/4/1/41-small_default.jpg" alt=""></a>
+                                <div>
+                                    <h5><a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=6&amp;controller=product&amp;id_lang=1" title="Btrease Vaers®">Btrease Vaers®</a></h5>
+                                    <p class="product_descr"> There is nothing better than charming coffee aroma which flows into...</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?controller=best-sales" title="All best sellers" class="button_large">All best sellers</a>
+                    </div>
+                </section>
+                <!-- MODULE Block new products -->
+                <section id="new-products_block_right" class="block products_block column_box">
+                    <h4 class="title_block"><span>New products</span> <i class="column_icon_toggle icon-plus-sign"></i></h4>
+                    <div class="block_content toggle_content">
+                        <ul class="products">
+                            <li class="shop_box clearfix first_item">
+
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=1&amp;controller=product&amp;id_lang=1" title=""><img src="http://livedemo00.template-help.com/prestashop_46849/img/p/1/1-medium_default.jpg" alt=""></a>
+
+                                <div>
+                                    <h5 class="s_title_block">
+                                        <a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=1&amp;controller=product&amp;id_lang=1" title="Miuyas Laytsas®">Miuyas Laytsas®</a>
+                                    </h5>
+                                    <p class="product_desc">There is nothing better than charming coffee aroma which...</p>
+                                    <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=1&amp;controller=product&amp;id_lang=1" class="lnk_more">Read more <i class="icon-caret-right"></i></a>
+                                </div>
+                            </li>
+                            <li class="shop_box clearfix item">
+
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=2&amp;controller=product&amp;id_lang=1" title=""><img src="http://livedemo00.template-help.com/prestashop_46849/img/p/9/9-medium_default.jpg" alt=""></a>
+
+                                <div>
+                                    <h5 class="s_title_block">
+                                        <a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=2&amp;controller=product&amp;id_lang=1" title="Btrease Vaers®">Btrease Vaers®</a>
+                                    </h5>
+                                    <p class="product_desc">There is nothing better than charming coffee aroma which...</p>
+                                    <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=2&amp;controller=product&amp;id_lang=1" class="lnk_more">Read more <i class="icon-caret-right"></i></a>
+                                </div>
+                            </li>
+                            <li class="shop_box clearfix item">
+
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=3&amp;controller=product&amp;id_lang=1" title=""><img src="http://livedemo00.template-help.com/prestashop_46849/img/p/1/7/17-medium_default.jpg" alt=""></a>
+
+                                <div>
+                                    <h5 class="s_title_block">
+                                        <a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=3&amp;controller=product&amp;id_lang=1" title="Ketyasas vtreasas®">Ketyasas vtreasas®</a>
+                                    </h5>
+                                    <p class="product_desc">There is nothing better than charming coffee aroma which...</p>
+                                    <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=3&amp;controller=product&amp;id_lang=1" class="lnk_more">Read more <i class="icon-caret-right"></i></a>
+                                </div>
+                            </li>
+                            <li class="shop_box clearfix item">
+
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=4&amp;controller=product&amp;id_lang=1" title=""><img src="http://livedemo00.template-help.com/prestashop_46849/img/p/2/5/25-medium_default.jpg" alt=""></a>
+
+                                <div>
+                                    <h5 class="s_title_block">
+                                        <a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=4&amp;controller=product&amp;id_lang=1" title="Yapuytasa®">Yapuytasa®</a>
+                                    </h5>
+                                    <p class="product_desc">There is nothing better than charming coffee aroma which...</p>
+                                    <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=4&amp;controller=product&amp;id_lang=1" class="lnk_more">Read more <i class="icon-caret-right"></i></a>
+                                </div>
+                            </li>
+                            <li class="shop_box clearfix last_item">
+
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=5&amp;controller=product&amp;id_lang=1" title=""><img src="http://livedemo00.template-help.com/prestashop_46849/img/p/3/3/33-medium_default.jpg" alt=""></a>
+
+                                <div>
+                                    <h5 class="s_title_block">
+                                        <a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=5&amp;controller=product&amp;id_lang=1" title="Miuyas Laytsas">Miuyas Laytsas</a>
+                                    </h5>
+                                    <p class="product_desc">There is nothing better than charming coffee aroma which...</p>
+                                    <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=5&amp;controller=product&amp;id_lang=1" class="lnk_more">Read more <i class="icon-caret-right"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?controller=new-products" title="All new products" class="button_large">All new products</a>
+                    </div>
+                </section>
+                <!-- /MODULE Block new products -->
+                <!-- MODULE Block specials -->
+                <section id="specials" class="block products_block column_box">
+                    <h4><span>Specials</span><i class="column_icon_toggle icon-plus-sign"></i></h4>
+                    <div class="block_content toggle_content">
+                        <ul>
+                            <li class="shop_box  clearfix">
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=9&amp;controller=product&amp;id_lang=1"><img src="http://livedemo00.template-help.com/prestashop_46849/img/p/6/5/65-small_default.jpg" alt="" title="Miuyas Laytsas®"></a>
+                                <div>
+                                    <h5><a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=9&amp;controller=product&amp;id_lang=1" title="Miuyas Laytsas®">Miuyas Laytsas®</a></h5>
+                                    <p class="product_desc"> There is nothing better than...</p>
+                                    <span class="price">$779</span>
+                                    <span class="reduction price">(-5%)</span>
+
+                                    <span class="price-discount price">$820</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <a class="button_large" href="http://livedemo00.template-help.com/prestashop_46849/index.php?controller=prices-drop" title="All specials">All specials</a>
+                    </div>
+                </section>
+                <!-- /MODULE Block specials -->
+                <!-- Block CMS module -->
+                <section class="block blockcms column_box">
+                    <h4><span>Information</span><i class="column_icon_toggle icon-plus-sign"></i></h4>
+                    <ul class="store_list toggle_content clearfix">
+                        <li><a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_cms=1&amp;controller=cms&amp;id_lang=1" title="Delivery"><i class="icon-ok"></i>Delivery</a></li>
+                        <li><a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_cms=2&amp;controller=cms&amp;id_lang=1" title="Legal Notice"><i class="icon-ok"></i>Legal Notice</a></li>
+                        <li><a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_cms=3&amp;controller=cms&amp;id_lang=1" title="Terms and conditions of use"><i class="icon-ok"></i>Terms and conditions of use</a></li>
+                        <li><a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_cms=4&amp;controller=cms&amp;id_lang=1" title="About us"><i class="icon-ok"></i>About us</a></li>
+                        <li><a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_cms=5&amp;controller=cms&amp;id_lang=1" title="Secure payment"><i class="icon-ok"></i>Secure payment</a></li>
+                        <li><a href="http://livedemo00.template-help.com/prestashop_46849/index.php?controller=stores" title="Our stores"><i class="icon-ok"></i>Our stores</a></li>
+                    </ul>
+                </section>
+                <!-- /Block CMS module -->
+                <!-- Block links module -->
+                <section id="links_block_left" class="block column_box">
+                    <h4>
+                        <span>
+                            Block link
+                        </span>
+                        <i class="column_icon_toggle icon-plus-sign"></i>
+                    </h4>
+                    <ul class="block_content store_list toggle_content">
+
+                        <li><a href="http://facebook.com"><i class="icon-ok"></i>Facebook Link</a></li>
+
+                        <li><a href="http://blog.templatemonster.com/"><i class="icon-ok"></i>Our Blog</a></li>
+
+                        <li><a href="http://twitter.com/"><i class="icon-ok"></i>Twitter Link</a></li>
+                    </ul>
+                </section>
+                <!-- /Block links module -->
+
+            </aside>
+        </div>
+    </div>
+</div>

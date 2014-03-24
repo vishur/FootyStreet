@@ -1,0 +1,25 @@
+﻿@using HtmlHelpers.BeginCollectionItem
+
+@model List<FootyStreet.Business.Product.Contracts.UomColor>
+
+@using (Html.BeginCollectionItem("UomColors"))
+{
+
+    <table>
+        <tr>
+            <th>UOM</th>
+            <th>Color</th>
+            <th>Quantity</th>
+        </tr>
+        @foreach (var uomcolor in Model)
+        {
+        <tr>
+            <td>@uomcolor.UomDescription</td>
+            <td>@uomcolor.ColorDescription</td>
+            <td>@uomcolor.Quantity</td>
+        </tr>
+        }
+    </table>
+
+
+}

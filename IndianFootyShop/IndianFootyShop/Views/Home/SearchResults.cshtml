@@ -1,0 +1,462 @@
+﻿@{
+    ViewBag.Title = "SearchResults";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+<div id="columns" class="container ">
+    <div class="breadcrumb">
+        <div class="breadcrumb_inset">
+            <a class="breadcrumb-home" href="http://livedemo00.template-help.com/prestashop_46849/" title="Return to Home"><i class="icon-home"></i></a>
+            <span class="navigation-pipe ">&gt;</span>
+            <span class="navigation_page">Top sellers</span>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="loader_page">
+
+            <div id="center_column" class="center_column span9 clearfix">
+
+                <!-- Breadcrumb -->
+                <!-- /Breadcrumb -->
+                <h1><span>Top sellers</span></h1>
+                <div class="sortPagiBar shop_box_row shop_box_row clearfix">
+
+
+                    <script type="text/javascript">
+                        //<![CDATA[
+                        $(document).ready(function () {
+                            $('.selectProductSort').change(function () {
+                                var requestSortProducts = 'http://livedemo00.template-help.com/prestashop_46849/index.php?controller=best-sales';
+                                var splitData = $(this).val().split(':');
+                                document.location.href = requestSortProducts + ((requestSortProducts.indexOf('?') < 0) ? '?' : '&') + 'orderby=' + splitData[0] + '&orderway=' + splitData[1];
+                            });
+                        });
+                        //]]>
+                    </script>
+                    <script type="text/javascript">
+                        //<![CDATA[
+                        $(document).ready(function () {
+                            $('#productsSortForm .selectProductSort, .nb_item').uniform();
+                        });
+                        //]]>
+                    </script>
+                    <ul class="product_view clearfix">
+                        <li id="product_view_grid" class=""><i class="icon-th-large"></i></li>
+                        <li id="product_view_list" class="current"><i class="icon-th-list"></i></li>
+                    </ul>
+                    <form id="productsSortForm" action="./Best sales 2view- Ispase_files/Best sales 2view- Ispase.htm" class="nbrItemPage">
+                        <label for="selectProductSort">Sort by</label>
+                        <div class="selector" id="uniform-selectProductSort" style="width: 222px;">
+                            <span style="width: 212px; -webkit-user-select: none;">Price: Lowest first</span><select id="selectProductSort" class="selectProductSort" name="selectProductSort">
+                                <option value="price:asc">Price: Lowest first</option>
+                                <option value="price:desc">Price: Highest first</option>
+                                <option value="name:asc">Product Name: A to Z</option>
+                                <option value="name:desc">Product Name: Z to A</option>
+                                <option value="quantity:desc">In stock</option>
+                            </select>
+                        </div>
+                    </form>
+                    <!-- /Sort products -->
+                    <!-- nbr product/page -->
+                    <!-- /nbr product/page -->
+                </div>
+
+                <!-- Products list -->
+
+                <ul id="product_list" class="row list">
+
+                    <li class="ajax_block_product span3 num-1 alpha ">
+                        <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=2&controller=product&id_lang=1" class="product_img_link" title="Btrease Vaers®">
+                            <img src="~/Content/themes/base/images/9-home_default.jpg" alt="">
+                        </a>
+                        <div class="center_block">
+                            <div class="product_flags clearfix">
+                                <span class="new title_shop">New!</span>
+                                <span class="availability title_shop">
+                                    Available
+                                </span>
+                            </div>
+                            <div class="clear"></div>
+                            <h5><a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=2&controller=product&id_lang=1" title="Btrease Vaers®">Btrease Vaers®</a></h5>
+                            <p class="product_desc">There is nothing better than charming coffee aroma which flows into your sleepy morning. Everyday millions of people enjoy their lives by drinking a fragrant dark morning drink. The origin of coffee is covered with mystery. Thousands of legends have been told, hundreds of gods have been created and millions of minds have been lured with the coffee mania.</p>
+                            <p class="product_desc mob">There is nothing better than charming coffee aroma which flows into your sleepy...</p>
+                            <p class="product_desc mob2">There is nothing better than charming coffee aroma which flows into your sleepy morning. Everyday millions of people enjoy their lives by drinking a fragrant dark morning drink....</p>
+                        </div>
+                        <div class="right_block">
+                            <span class="price">$629</span>
+
+                            <p class="compare checkbox choices-thin clearfix">
+                                <div class="checker" id="uniform-comparator_item_2"><span><input type="checkbox" class="comparator" id="comparator_item_2" value="comparator_item_2"></span></div>
+                                <label for="comparator_item_2">Select to compare</label>
+                            </p>
+                            <div class="clear noneclass"></div>
+                            <a class="ajax_add_to_cart_button exclusive btn_add_cart" rel="ajax_id_product_2" href="http://livedemo00.template-help.com/prestashop_46849/index.php?controller=cart&add=&id_product=2&token=ffc916940df8072ed4261aac6c53678d" title="Add to cart">
+                                <span>Add to cart</span>
+                            </a>
+
+                            <a class="button" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=2&controller=product&id_lang=1" title="View">View</a>
+                        </div>
+                    </li>
+
+                    <li class="ajax_block_product span3 num-2 ">
+                        <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=4&controller=product&id_lang=1" class="product_img_link" title="Yapuytasa®">
+                            <img src="~/Content/themes/base/images/25-home_default.jpg" alt="">
+                        </a>
+                        <div class="center_block">
+                            <div class="product_flags clearfix">
+                                <span class="new title_shop">New!</span>
+                                <span class="availability title_shop">
+                                    Available
+                                </span>
+                            </div>
+                            <div class="clear"></div>
+                            <h5><a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=4&controller=product&id_lang=1" title="Yapuytasa®">Yapuytasa®</a></h5>
+                            <p class="product_desc">There is nothing better than charming coffee aroma which flows into your sleepy morning. Everyday millions of people enjoy their lives by drinking a fragrant dark morning drink. The origin of coffee is covered with mystery. Thousands of legends have been told, hundreds of gods have been created and millions of minds have been lured with the coffee mania.</p>
+                            <p class="product_desc mob">There is nothing better than charming coffee aroma which flows into your sleepy...</p>
+                            <p class="product_desc mob2">There is nothing better than charming coffee aroma which flows into your sleepy morning. Everyday millions of people enjoy their lives by drinking a fragrant dark morning drink....</p>
+                        </div>
+                        <div class="right_block">
+                            <span class="price">$929</span>
+
+                            <p class="compare checkbox choices-thin clearfix">
+                                <div class="checker" id="uniform-comparator_item_4"><span><input type="checkbox" class="comparator" id="comparator_item_4" value="comparator_item_4"></span></div>
+                                <label for="comparator_item_4">Select to compare</label>
+                            </p>
+                            <div class="clear noneclass"></div>
+                            <a class="ajax_add_to_cart_button exclusive btn_add_cart" rel="ajax_id_product_4" href="http://livedemo00.template-help.com/prestashop_46849/index.php?controller=cart&add=&id_product=4&token=ffc916940df8072ed4261aac6c53678d" title="Add to cart">
+                                <span>Add to cart</span>
+                            </a>
+
+                            <a class="button" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=4&controller=product&id_lang=1" title="View">View</a>
+                        </div>
+                    </li>
+
+                    <li class="ajax_block_product span3 num-3 omega ">
+                        <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=6&controller=product&id_lang=1" class="product_img_link" title="Btrease Vaers®">
+                            <img src="~/Content/themes/base/images/41-home_default.jpg" alt="">
+                        </a>
+                        <div class="center_block">
+                            <div class="product_flags clearfix">
+                                <span class="new title_shop">New!</span>
+                                <span class="availability title_shop">
+                                    Available
+                                </span>
+                            </div>
+                            <div class="clear"></div>
+                            <h5><a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=6&controller=product&id_lang=1" title="Btrease Vaers®">Btrease Vaers®</a></h5>
+                            <p class="product_desc">There is nothing better than charming coffee aroma which flows into your sleepy morning. Everyday millions of people enjoy their lives by drinking a fragrant dark morning drink. The origin of coffee is covered with mystery. Thousands of legends have been told, hundreds of gods have been created and millions of minds have been lured with the coffee mania.</p>
+                            <p class="product_desc mob">There is nothing better than charming coffee aroma which flows into your sleepy...</p>
+                            <p class="product_desc mob2">There is nothing better than charming coffee aroma which flows into your sleepy morning. Everyday millions of people enjoy their lives by drinking a fragrant dark morning drink....</p>
+                        </div>
+                        <div class="right_block">
+                            <span class="price">$429</span>
+
+                            <p class="compare checkbox choices-thin clearfix">
+                                <div class="checker" id="uniform-comparator_item_6"><span><input type="checkbox" class="comparator" id="comparator_item_6" value="comparator_item_6"></span></div>
+                                <label for="comparator_item_6">Select to compare</label>
+                            </p>
+                            <div class="clear noneclass"></div>
+                            <a class="ajax_add_to_cart_button exclusive btn_add_cart" rel="ajax_id_product_6" href="http://livedemo00.template-help.com/prestashop_46849/index.php?controller=cart&add=&id_product=6&token=ffc916940df8072ed4261aac6c53678d" title="Add to cart">
+                                <span>Add to cart</span>
+                            </a>
+
+                            <a class="button" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=6&controller=product&id_lang=1" title="View">View</a>
+                        </div>
+                    </li>
+
+                    <li class="ajax_block_product span3 num-4 alpha last_line">
+                        <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=8&controller=product&id_lang=1" class="product_img_link" title="Yapuytasa®">
+                            <img src="~/Content/themes/base/images/57-home_default.jpg" alt="">
+                        </a>
+                        <div class="center_block">
+                            <div class="product_flags clearfix">
+                                <span class="new title_shop">New!</span>
+                                <span class="availability title_shop">
+                                    Available
+                                </span>				<span class="online_only title_shop">Online only</span>
+                            </div>
+                            <div class="clear"></div>
+                            <h5><a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=8&controller=product&id_lang=1" title="Yapuytasa®">Yapuytasa®</a></h5>
+                            <p class="product_desc">There is nothing better than charming coffee aroma which flows into your sleepy morning. Everyday millions of people enjoy their lives by drinking a fragrant dark morning drink. The origin of coffee is covered with mystery. Thousands of legends have been told, hundreds of gods have been created and millions of minds have been lured with the coffee mania.</p>
+                            <p class="product_desc mob">There is nothing better than charming coffee aroma which flows into your sleepy...</p>
+                            <p class="product_desc mob2">There is nothing better than charming coffee aroma which flows into your sleepy morning. Everyday millions of people enjoy their lives by drinking a fragrant dark morning drink....</p>
+                        </div>
+                        <div class="right_block">
+                            <span class="on_sale title_shop">On sale!</span>
+                            <span class="price">$563</span>
+
+                            <p class="compare checkbox choices-thin clearfix">
+                                <div class="checker" id="uniform-comparator_item_8"><span><input type="checkbox" class="comparator" id="comparator_item_8" value="comparator_item_8"></span></div>
+                                <label for="comparator_item_8">Select to compare</label>
+                            </p>
+                            <div class="clear noneclass"></div>
+                            <a class="ajax_add_to_cart_button exclusive btn_add_cart" rel="ajax_id_product_8" href="http://livedemo00.template-help.com/prestashop_46849/index.php?controller=cart&add=&id_product=8&token=ffc916940df8072ed4261aac6c53678d" title="Add to cart">
+                                <span>Add to cart</span>
+                            </a>
+
+                            <a class="button" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=8&controller=product&id_lang=1" title="View">View</a>
+                        </div>
+                    </li>
+
+                    <li class="ajax_block_product span3 num-5 last_line">
+                        <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=10&controller=product&id_lang=1" class="product_img_link" title="Btrease Vaers®">
+                            <img src="~/Content/themes/base/images/73-home_default.jpg" alt="">
+                        </a>
+                        <div class="center_block">
+                            <div class="product_flags clearfix">
+                                <span class="new title_shop">New!</span>
+                                <span class="availability title_shop">
+                                    Available
+                                </span>
+                            </div>
+                            <div class="clear"></div>
+                            <h5><a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=10&controller=product&id_lang=1" title="Btrease Vaers®">Btrease Vaers®</a></h5>
+                            <p class="product_desc">There is nothing better than charming coffee aroma which flows into your sleepy morning. Everyday millions of people enjoy their lives by drinking a fragrant dark morning drink. The origin of coffee is covered with mystery. Thousands of legends have been told, hundreds of gods have been created and millions of minds have been lured with the coffee mania.</p>
+                            <p class="product_desc mob">There is nothing better than charming coffee aroma which flows into your sleepy...</p>
+                            <p class="product_desc mob2">There is nothing better than charming coffee aroma which flows into your sleepy morning. Everyday millions of people enjoy their lives by drinking a fragrant dark morning drink....</p>
+                        </div>
+                        <div class="right_block">
+                            <span class="on_sale title_shop">On sale!</span>
+                            <span class="price">$658</span>
+
+                            <p class="compare checkbox choices-thin clearfix">
+                                <div class="checker" id="uniform-comparator_item_10"><span><input type="checkbox" class="comparator" id="comparator_item_10" value="comparator_item_10"></span></div>
+                                <label for="comparator_item_10">Select to compare</label>
+                            </p>
+                            <div class="clear noneclass"></div>
+                            <a class="ajax_add_to_cart_button exclusive btn_add_cart" rel="ajax_id_product_10" href="http://livedemo00.template-help.com/prestashop_46849/index.php?controller=cart&add=&id_product=10&token=ffc916940df8072ed4261aac6c53678d" title="Add to cart">
+                                <span>Add to cart</span>
+                            </a>
+
+                            <a class="button" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=10&controller=product&id_lang=1" title="View">View</a>
+                        </div>
+                    </li>
+                    <script>
+                        (function ($) {
+                            $(function () {
+                                function createCookie(name, value, days) {
+                                    if (days) {
+                                        var date = new Date();
+                                        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                                        var expires = "; expires=" + date.toGMTString();
+                                    }
+                                    else var expires = "";
+                                    document.cookie = name + "=" + value + expires + "; path=/";
+                                }
+                                function readCookie(name) {
+                                    var nameEQ = name + "=";
+                                    var ca = document.cookie.split(';');
+                                    for (var i = 0; i < ca.length; i++) {
+                                        var c = ca[i];
+                                        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                                        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+                                    }
+                                    return null;
+                                }
+                                function eraseCookie(name) {
+                                    createCookie(name, "", -1);
+                                }
+                                $('ul.product_view').each(function (i) {
+                                    var cookie = readCookie('tabCookie' + i);
+                                    if (cookie) $(this).find('li').eq(cookie).addClass('current').siblings().removeClass('current')
+                                        .parents('#center_column').find('#product_list').addClass('list').removeClass('grid').eq(cookie).addClass('grid').removeClass('list');
+                                })
+                                $('ul.product_view').delegate('li:not(.current)', 'click', function (i) {
+                                    $(this).addClass('current').siblings().removeClass('current')
+                                    .parents('#center_column').find('#product_list').removeClass('grid').addClass('list').eq($(this).index()).addClass('grid').removeClass('list')
+                                    var cookie = readCookie('tabCookie' + i);
+                                    if (cookie) $(this).find('#product_list').eq(cookie).removeClass('grid').addClass('list').siblings().removeClass('list')
+                                    var ulIndex = $('ul.product_view').index($(this).parents('ul.product_view'));
+                                    eraseCookie('tabCookie' + ulIndex);
+                                    createCookie('tabCookie' + ulIndex, $(this).index(), 365);
+                                })
+                            })
+                        })(jQuery)
+                    </script>
+                </ul>
+                <div class="bottom_pagination shop_box_row  clearfix">
+
+                    <script type="text/javascript">
+                        // <![CDATA[
+                        var min_item = 'Please select at least one product';
+                        var max_item = '<div id="myModal" class="modal hide fade notification notification_warning" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>You cannot add more than 2 product(s) to the product comparison</div>';
+
+                        //]]>
+                    </script>
+                    <form class="form_compare" method="post" action="http://livedemo00.template-help.com/prestashop_46849/index.php?controller=products-comparison" onsubmit="true">
+                        <p>
+                            <input type="submit" id="bt_compare" class="button" value="Compare">
+                            <input type="hidden" name="compare_product_list" class="compare_product_list" value="">
+                        </p>
+                    </form>
+
+
+
+                    <!-- Pagination -->
+
+                    <div id="pagination" class="pagination">
+
+                    </div>
+                    <!-- /Pagination -->
+                </div>
+            </div>
+            <!-- Right -->
+            <aside id="right_column" class="span3 column right_home">
+
+                <!-- MODULE Block best sellers -->
+                <section id="blockbestsellers" class="block products_block column_box">
+                    <h4><span>Top sellers</span><i class="column_icon_toggle icon-plus-sign"></i></h4>
+                    <div class="block_content toggle_content">
+                        <ul>
+                            <li class="clearfix shop_box">
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=2&controller=product&id_lang=1" title=""><img src="~/Content/themes/base/images/9-small_default.jpg" alt=""></a>
+                                <div>
+                                    <h5><a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=2&controller=product&id_lang=1" title="Btrease Vaers®">Btrease Vaers®</a></h5>
+                                    <p class="product_descr"> There is nothing better than charming coffee aroma which flows into...</p>
+                                </div>
+                            </li>
+                            <li class="clearfix shop_box">
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=4&controller=product&id_lang=1" title=""><img src="~/Content/themes/base/images/25-small_default.jpg" alt=""></a>
+                                <div>
+                                    <h5><a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=4&controller=product&id_lang=1" title="Yapuytasa®">Yapuytasa®</a></h5>
+                                    <p class="product_descr"> There is nothing better than charming coffee aroma which flows into...</p>
+                                </div>
+                            </li>
+                            <li class="clearfix shop_box">
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=6&controller=product&id_lang=1" title=""><img src="~/Content/themes/base/images/41-small_default.jpg" alt=""></a>
+                                <div>
+                                    <h5><a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=6&controller=product&id_lang=1" title="Btrease Vaers®">Btrease Vaers®</a></h5>
+                                    <p class="product_descr"> There is nothing better than charming coffee aroma which flows into...</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="~/Content/themes/base/images/Best sales 2view- Ispase.htm" title="All best sellers" class="button_large">All best sellers</a>
+                    </div>
+                </section>
+                <!-- MODULE Block new products -->
+                <section id="new-products_block_right" class="block products_block column_box">
+                    <h4 class="title_block"><span>New products</span> <i class="column_icon_toggle icon-plus-sign"></i></h4>
+                    <div class="block_content toggle_content">
+                        <ul class="products">
+                            <li class="shop_box clearfix first_item">
+
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=1&controller=product&id_lang=1" title=""><img src="~/Content/themes/base/images/1-medium_default.jpg" alt=""></a>
+
+                                <div>
+                                    <h5 class="s_title_block">
+                                        <a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=1&controller=product&id_lang=1" title="Miuyas Laytsas®">Miuyas Laytsas®</a>
+                                    </h5>
+                                    <p class="product_desc">There is nothing better than charming coffee aroma which...</p>
+                                    <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=1&controller=product&id_lang=1" class="lnk_more">Read more <i class="icon-caret-right"></i></a>
+                                </div>
+                            </li>
+                            <li class="shop_box clearfix item">
+
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=2&controller=product&id_lang=1" title=""><img src="~/Content/themes/base/images/9-medium_default.jpg" alt=""></a>
+
+                                <div>
+                                    <h5 class="s_title_block">
+                                        <a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=2&controller=product&id_lang=1" title="Btrease Vaers®">Btrease Vaers®</a>
+                                    </h5>
+                                    <p class="product_desc">There is nothing better than charming coffee aroma which...</p>
+                                    <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=2&controller=product&id_lang=1" class="lnk_more">Read more <i class="icon-caret-right"></i></a>
+                                </div>
+                            </li>
+                            <li class="shop_box clearfix item">
+
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=3&controller=product&id_lang=1" title=""><img src="~/Content/themes/base/images/17-medium_default.jpg" alt=""></a>
+
+                                <div>
+                                    <h5 class="s_title_block">
+                                        <a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=3&controller=product&id_lang=1" title="Ketyasas vtreasas®">Ketyasas vtreasas®</a>
+                                    </h5>
+                                    <p class="product_desc">There is nothing better than charming coffee aroma which...</p>
+                                    <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=3&controller=product&id_lang=1" class="lnk_more">Read more <i class="icon-caret-right"></i></a>
+                                </div>
+                            </li>
+                            <li class="shop_box clearfix item">
+
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=4&controller=product&id_lang=1" title=""><img src="~/Content/themes/base/images/25-medium_default.jpg" alt=""></a>
+
+                                <div>
+                                    <h5 class="s_title_block">
+                                        <a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=4&controller=product&id_lang=1" title="Yapuytasa®">Yapuytasa®</a>
+                                    </h5>
+                                    <p class="product_desc">There is nothing better than charming coffee aroma which...</p>
+                                    <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=4&controller=product&id_lang=1" class="lnk_more">Read more <i class="icon-caret-right"></i></a>
+                                </div>
+                            </li>
+                            <li class="shop_box clearfix last_item">
+
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=5&controller=product&id_lang=1" title=""><img src="~/Content/themes/base/images/33-medium_default.jpg" alt=""></a>
+
+                                <div>
+                                    <h5 class="s_title_block">
+                                        <a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=5&controller=product&id_lang=1" title="Miuyas Laytsas">Miuyas Laytsas</a>
+                                    </h5>
+                                    <p class="product_desc">There is nothing better than charming coffee aroma which...</p>
+                                    <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=5&controller=product&id_lang=1" class="lnk_more">Read more <i class="icon-caret-right"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="http://livedemo00.template-help.com/prestashop_46849/index.php?controller=new-products" title="All new products" class="button_large">All new products</a>
+                    </div>
+                </section>
+                <!-- /MODULE Block new products -->
+                <!-- MODULE Block specials -->
+                <section id="specials" class="block products_block column_box">
+                    <h4><span>Specials</span><i class="column_icon_toggle icon-plus-sign"></i></h4>
+                    <div class="block_content toggle_content">
+                        <ul>
+                            <li class="shop_box  clearfix">
+                                <a class="products_block_img" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=1&controller=product&id_lang=1"><img src="~/Content/themes/base/images/1-small_default.jpg" alt="" title="Miuyas Laytsas®"></a>
+                                <div>
+                                    <h5><a class="product_link" href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_product=1&controller=product&id_lang=1" title="Miuyas Laytsas®">Miuyas Laytsas®</a></h5>
+                                    <p class="product_desc"> There is nothing better than...</p>
+                                    <span class="price">$123</span>
+                                    <span class="reduction price">(-5%)</span>
+
+                                    <span class="price-discount price">$129</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <a class="button_large" href="http://livedemo00.template-help.com/prestashop_46849/index.php?controller=prices-drop" title="All specials">All specials</a>
+                    </div>
+                </section>
+                <!-- /MODULE Block specials -->
+                <!-- Block CMS module -->
+                <section class="block blockcms column_box">
+                    <h4><span>Information</span><i class="column_icon_toggle icon-plus-sign"></i></h4>
+                    <ul class="store_list toggle_content clearfix">
+                        <li><a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_cms=1&controller=cms&id_lang=1" title="Delivery"><i class="icon-ok"></i>Delivery</a></li>
+                        <li><a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_cms=2&controller=cms&id_lang=1" title="Legal Notice"><i class="icon-ok"></i>Legal Notice</a></li>
+                        <li><a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_cms=3&controller=cms&id_lang=1" title="Terms and conditions of use"><i class="icon-ok"></i>Terms and conditions of use</a></li>
+                        <li><a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_cms=4&controller=cms&id_lang=1" title="About us"><i class="icon-ok"></i>About us</a></li>
+                        <li><a href="http://livedemo00.template-help.com/prestashop_46849/index.php?id_cms=5&controller=cms&id_lang=1" title="Secure payment"><i class="icon-ok"></i>Secure payment</a></li>
+                        <li><a href="http://livedemo00.template-help.com/prestashop_46849/index.php?controller=stores" title="Our stores"><i class="icon-ok"></i>Our stores</a></li>
+                    </ul>
+                </section>
+                <!-- /Block CMS module -->
+                <!-- Block links module -->
+                <section id="links_block_left" class="block column_box">
+                    <h4>
+                        <span>
+                            Block link
+                        </span>
+                        <i class="column_icon_toggle icon-plus-sign"></i>
+                    </h4>
+                    <ul class="block_content store_list toggle_content">
+
+                        <li><a href="http://facebook.com/"><i class="icon-ok"></i>Facebook Link</a></li>
+
+                        <li><a href="http://blog.templatemonster.com/"><i class="icon-ok"></i>Our Blog</a></li>
+
+                        <li><a href="http://twitter.com/"><i class="icon-ok"></i>Twitter Link</a></li>
+                    </ul>
+                </section>
+                <!-- /Block links module -->
+
+            </aside>
+        </div>
+    </div>
+</div>
+
