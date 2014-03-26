@@ -26,6 +26,7 @@ namespace FootyStreet.Data
         public int TagID { get; set; }
         public string TagName { get; set; }
         public string TagDescription { get; set; }
+        public int CategoryID { get; set; }
         public System.DateTime CreatedDate { get; set; }
         public System.DateTime UpdatedDate { get; set; }
         public string CreatedBy { get; set; }

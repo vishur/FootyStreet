@@ -23,17 +23,17 @@ namespace FootyStreet.Data.DataAccessCommon
             dDatabase.LoadDataSet(dcCommand, dsResults, tableNames);
             return dsResults;
         }
-        public static DataSet GetDataFromSSPStoredProc(string storedProcedureName, string[] tableNames, params object[] inputParameterValues)
-        {
-            DataSet dsResults = new DataSet();
-            Database dDatabase = DatabaseFactory.CreateDatabase(FootyStreetConnectionString);
-            System.Data.Common.DbCommand dcCommand = dDatabase.GetSqlStringCommand(storedProcedureName);
-            dcCommand.CommandType = CommandType.StoredProcedure;
-            dDatabase.AssignParameters(dcCommand, inputParameterValues);
-            dcCommand.CommandTimeout = 120;
-            dDatabase.LoadDataSet(dcCommand, dsResults, tableNames);
-            return dsResults;
-        }
+        //public static DataSet GetDataFromSSPStoredProc(string storedProcedureName, string[] tableNames, params object[] inputParameterValues)
+        //{
+        //    DataSet dsResults = new DataSet();
+        //    Database dDatabase = DatabaseFactory.CreateDatabase(FootyStreetConnectionString);
+        //    System.Data.Common.DbCommand dcCommand = dDatabase.GetSqlStringCommand(storedProcedureName);
+        //    dcCommand.CommandType = CommandType.StoredProcedure;
+        //    dDatabase.AssignParameters(dcCommand, inputParameterValues);
+        //    dcCommand.CommandTimeout = 120;
+        //    dDatabase.LoadDataSet(dcCommand, dsResults, tableNames);
+        //    return dsResults;
+        //}
 
         public static int UpdateOrInsertData(string storedProcedureName, params object[] parameterValues)
         {
@@ -45,7 +45,7 @@ namespace FootyStreet.Data.DataAccessCommon
         //    var helper = new SqlClientHelper();
         //    return helper.GetDataSetByProcedure(storedProcedureName, KyHbeConnectionString, true, parameterValues);
         //}
-        public static object GetScalarValueFromSSPStoredProc(string storedProcedureName, params object[] inputParameterValues)
+        public static object GetScalarValueFromStoredProc(string storedProcedureName, params object[] inputParameterValues)
         {
             return DatabaseFactory.CreateDatabase(FootyStreetConnectionString).ExecuteScalar(storedProcedureName, inputParameterValues);
 

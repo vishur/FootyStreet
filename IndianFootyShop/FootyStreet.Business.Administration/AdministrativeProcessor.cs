@@ -43,17 +43,17 @@ namespace FootyStreet.Business.Administration
 
         public bool insert()
         {
-            var objTag = RepositoryFactory.GetRepository<Tag>();
-            var tag = objTag.Create();
-            tag.TagName = "First";
-            tag.TagDescription = "Desc";
-            tag.UpdatedDate = System.DateTime.Now;
-            tag.CreatedDate = System.DateTime.Now;
-            tag.UpdatedBy = "Admin";
-            tag.CreatedBy = "Admin";
-            objTag.Insert(tag);
-            objTag.Save();
-            var t = tag.TagID;
+            //var objTag = RepositoryFactory.GetRepository<Tag>();
+            //var tag = objTag.Create();
+            //tag.TagName = "First";
+            //tag.TagDescription = "Desc";
+            //tag.UpdatedDate = System.DateTime.Now;
+            //tag.CreatedDate = System.DateTime.Now;
+            //tag.UpdatedBy = "Admin";
+            //tag.CreatedBy = "Admin";
+            //objTag.Insert(tag);
+            //objTag.Save();
+            //var t = tag.TagID;
             return true;
         }
 
@@ -68,7 +68,8 @@ namespace FootyStreet.Business.Administration
                 UnitOfMeasure = new List<UnitOfMeasure>(),
                 UomColors = new List<UomColor>(),
                 CategorySubCategories = new List<Product.Contracts.CategorySubCategory>(),
-                Vendors = new List<Product.Contracts.Vendor>()
+                Vendors = new List<Product.Contracts.Vendor>(),
+                Tags = new List<Product.Contracts.Tag>(),
             };
             productViewModel.Categories.AddRange(RepositoryFactory.GetRepository<FootyStreet.Data.Category>().Data.ToList().Select(m => new Product.Contracts.Category
             {
@@ -123,8 +124,20 @@ namespace FootyStreet.Business.Administration
         public List<Product.Contracts.SubCategory> GetSubCategories(int categoryId)
         {
             var subCategories = (from s in ProductViewModelData.SubCategories join csc in ProductViewModelData.CategorySubCategories on s.SubCategoryID equals csc.SubCategoryID where csc.CategoryID == categoryId select s).ToList();
+            GetProductTags(categoryId);
             return subCategories;
-                                  
+        }
+
+        private void GetProductTags(int categoryId)
+        {
+            var tags = (from t in RepositoryFactory.GetRepository<FootyStreet.Data.Tag>().Data.ToList() where t.CategoryID == categoryId select t).ToList();
+            this.ProductViewModelData.Tags.AddRange(tags.Select(t => new Product.Contracts.Tag
+            {
+                TagID = t.TagID,
+                TagDescription = t.TagDescription,
+                TagName = t.TagName
+            }));
+
         }
 
         public int SaveProduct(ProductViewModel productViewModel)
@@ -160,22 +173,22 @@ namespace FootyStreet.Business.Administration
                     ImageFileName = image.FileName,
                     ImageThumbnailFileName = image.FileName,
                     ImageFilePath = relativeOriginalImagePath,
-                    ImageThumbnailFilePath = relativeThumbnailImagePath
+                    ImageThumbnailFilePath = relativeThumbnailImagePath,
+                    ImageType = image.FileName.Contains("main") ? "PR" : "OR"
 
                 });
             }
             foreach (var image in productViewModel.ThumbnailImages)
             {
                 image.SaveAs(thumbnailImagePath + image.FileName);
-
                 productViewModel.Images.Add(new Product.Contracts.Image
                 {
                     ImageAltText = productViewModel.ProductName,
                     ImageFileName = image.FileName,
                     ImageThumbnailFileName = image.FileName,
                     ImageFilePath = relativeOriginalImagePath,
-                    ImageThumbnailFilePath = relativeThumbnailImagePath
-
+                    ImageThumbnailFilePath = relativeThumbnailImagePath,
+                    ImageType = "TH"
                 });
             }
 

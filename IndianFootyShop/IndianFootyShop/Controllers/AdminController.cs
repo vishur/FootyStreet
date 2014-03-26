@@ -28,6 +28,7 @@ namespace IndianFootyShop.Controllers
         {
             var administrativeProcessor = DependencyResolver.Current.GetService<IAdministrative>();
             var subCategoryList = administrativeProcessor.GetSubCategories(categoryId);
+            //var tags = administrativeProcessor
             return Json(new SelectList(subCategoryList.ToArray(), "SubCategoryID", "SubCategoryDescription"), JsonRequestBehavior.AllowGet);
         }
 

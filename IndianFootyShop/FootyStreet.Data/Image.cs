@@ -29,6 +29,7 @@ namespace FootyStreet.Data
         public string ImageThumbnailFileName { get; set; }
         public string ImageFilePath { get; set; }
         public string ImageThumbnailFilePath { get; set; }
+        public string ImageType { get; set; }
         public System.DateTime CreatedDate { get; set; }
         public System.DateTime UpdatedDate { get; set; }
         public string CreatedBy { get; set; }

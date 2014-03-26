@@ -94,6 +94,7 @@
           <Property Name="ImageThumbnailFileName" Type="varchar" MaxLength="500" Nullable="false" />
           <Property Name="ImageFilePath" Type="varchar" MaxLength="500" Nullable="false" />
           <Property Name="ImageThumbnailFilePath" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ImageType" Type="varchar" MaxLength="10" />
           <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
           <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
@@ -349,6 +350,7 @@
           <Property Name="TagID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TagName" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="TagDescription" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="CategoryID" Type="int" Nullable="false" />
           <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
           <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
@@ -1380,13 +1382,8 @@
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
           <EntitySet Name="ProductTags" EntityType="FootyStreetModel.ProductTag" />
-          <EntitySet Name="Tags" EntityType="FootyStreetModel.Tag" />
           <AssociationSet Name="FK_ProductTag_Product" Association="FootyStreetModel.FK_ProductTag_Product">
             <End Role="Product" EntitySet="Products" />
-            <End Role="ProductTag" EntitySet="ProductTags" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ProductTag_Tag" Association="FootyStreetModel.FK_ProductTag_Tag">
-            <End Role="Tag" EntitySet="Tags" />
             <End Role="ProductTag" EntitySet="ProductTags" />
           </AssociationSet>
           <EntitySet Name="Vendors" EntityType="FootyStreetModel.Vendor" />
@@ -1397,7 +1394,6 @@
             <End Role="AddressType" EntitySet="AddressTypes" />
             <End Role="Address" EntitySet="Addresses" />
           </AssociationSet>
-          <EntitySet Name="Images" EntityType="FootyStreetModel.Image" />
           <EntitySet Name="Prices" EntityType="FootyStreetModel.Price" />
           <EntitySet Name="ProductDetails" EntityType="FootyStreetModel.ProductDetail" />
           <AssociationSet Name="FK_ProductDetail_Price" Association="FootyStreetModel.FK_ProductDetail_Price">
@@ -1413,13 +1409,19 @@
             <End Role="ProductDetail" EntitySet="ProductDetails" />
           </AssociationSet>
           <EntitySet Name="ProductImages" EntityType="FootyStreetModel.ProductImage" />
+          <AssociationSet Name="FK_ProductImage_Product" Association="FootyStreetModel.FK_ProductImage_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ProductImage" EntitySet="ProductImages" />
+          </AssociationSet>
+          <EntitySet Name="Images" EntityType="FootyStreetModel.Image" />
           <AssociationSet Name="FK_ProductImage_Image" Association="FootyStreetModel.FK_ProductImage_Image">
             <End Role="Image" EntitySet="Images" />
             <End Role="ProductImage" EntitySet="ProductImages" />
           </AssociationSet>
-          <AssociationSet Name="FK_ProductImage_Product" Association="FootyStreetModel.FK_ProductImage_Product">
-            <End Role="Product" EntitySet="Products" />
-            <End Role="ProductImage" EntitySet="ProductImages" />
+          <EntitySet Name="Tags" EntityType="FootyStreetModel.Tag" />
+          <AssociationSet Name="FK_ProductTag_Tag" Association="FootyStreetModel.FK_ProductTag_Tag">
+            <End Role="Tag" EntitySet="Tags" />
+            <End Role="ProductTag" EntitySet="ProductTags" />
           </AssociationSet>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -1447,19 +1449,6 @@
           <NavigationProperty Name="Product" Relationship="FootyStreetModel.FK_ProductTag_Product" FromRole="ProductTag" ToRole="Product" />
           <NavigationProperty Name="Tag" Relationship="FootyStreetModel.FK_ProductTag_Tag" FromRole="ProductTag" ToRole="Tag" />
         </EntityType>
-        <EntityType Name="Tag">
-          <Key>
-            <PropertyRef Name="TagID" />
-          </Key>
-          <Property Name="TagID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TagName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="TagDescription" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ProductTags" Relationship="FootyStreetModel.FK_ProductTag_Tag" FromRole="Tag" ToRole="ProductTag" />
-        </EntityType>
         <Association Name="FK_ProductTag_Product">
           <End Type="FootyStreetModel.Product" Role="Product" Multiplicity="1" />
           <End Type="FootyStreetModel.ProductTag" Role="ProductTag" Multiplicity="*" />
@@ -1469,18 +1458,6 @@
             </Principal>
             <Dependent Role="ProductTag">
               <PropertyRef Name="ProductID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ProductTag_Tag">
-          <End Type="FootyStreetModel.Tag" Role="Tag" Multiplicity="1" />
-          <End Type="FootyStreetModel.ProductTag" Role="ProductTag" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tag">
-              <PropertyRef Name="TagID" />
-            </Principal>
-            <Dependent Role="ProductTag">
-              <PropertyRef Name="TagID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1555,22 +1532,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="Image">
-          <Key>
-            <PropertyRef Name="ImageID" />
-          </Key>
-          <Property Name="ImageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ImageAltText" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="ImageFileName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="ImageThumbnailFileName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="ImageFilePath" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="ImageThumbnailFilePath" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ProductImages" Relationship="FootyStreetModel.FK_ProductImage_Image" FromRole="Image" ToRole="ProductImage" />
-        </EntityType>
         <EntityType Name="Price">
           <Key>
             <PropertyRef Name="PriceID" />
@@ -1648,8 +1609,37 @@
           <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Image" Relationship="FootyStreetModel.FK_ProductImage_Image" FromRole="ProductImage" ToRole="Image" />
           <NavigationProperty Name="Product" Relationship="FootyStreetModel.FK_ProductImage_Product" FromRole="ProductImage" ToRole="Product" />
+          <NavigationProperty Name="Image" Relationship="FootyStreetModel.FK_ProductImage_Image" FromRole="ProductImage" ToRole="Image" />
+        </EntityType>
+        <Association Name="FK_ProductImage_Product">
+          <End Type="FootyStreetModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="FootyStreetModel.ProductImage" Role="ProductImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductImage">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="ImageID" />
+          </Key>
+          <Property Name="ImageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageAltText" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ImageFileName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ImageThumbnailFileName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ImageFilePath" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ImageThumbnailFilePath" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ImageType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ProductImages" Relationship="FootyStreetModel.FK_ProductImage_Image" FromRole="Image" ToRole="ProductImage" />
         </EntityType>
         <Association Name="FK_ProductImage_Image">
           <End Type="FootyStreetModel.Image" Role="Image" Multiplicity="1" />
@@ -1663,15 +1653,29 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ProductImage_Product">
-          <End Type="FootyStreetModel.Product" Role="Product" Multiplicity="1" />
-          <End Type="FootyStreetModel.ProductImage" Role="ProductImage" Multiplicity="*" />
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="TagID" />
+          </Key>
+          <Property Name="TagID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TagName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TagDescription" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CategoryID" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ProductTags" Relationship="FootyStreetModel.FK_ProductTag_Tag" FromRole="Tag" ToRole="ProductTag" />
+        </EntityType>
+        <Association Name="FK_ProductTag_Tag">
+          <End Type="FootyStreetModel.Tag" Role="Tag" Multiplicity="1" />
+          <End Type="FootyStreetModel.ProductTag" Role="ProductTag" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Product">
-              <PropertyRef Name="ProductID" />
+            <Principal Role="Tag">
+              <PropertyRef Name="TagID" />
             </Principal>
-            <Dependent Role="ProductImage">
-              <PropertyRef Name="ProductID" />
+            <Dependent Role="ProductTag">
+              <PropertyRef Name="TagID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1979,19 +1983,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Tags">
-            <EntityTypeMapping TypeName="FootyStreetModel.Tag">
-              <MappingFragment StoreEntitySet="Tag">
-                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="TagDescription" ColumnName="TagDescription" />
-                <ScalarProperty Name="TagName" ColumnName="TagName" />
-                <ScalarProperty Name="TagID" ColumnName="TagID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Vendors">
             <EntityTypeMapping TypeName="FootyStreetModel.Vendor">
               <MappingFragment StoreEntitySet="Vendor">
@@ -2052,22 +2043,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Images">
-            <EntityTypeMapping TypeName="FootyStreetModel.Image">
-              <MappingFragment StoreEntitySet="Image">
-                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="ImageThumbnailFilePath" ColumnName="ImageThumbnailFilePath" />
-                <ScalarProperty Name="ImageFilePath" ColumnName="ImageFilePath" />
-                <ScalarProperty Name="ImageThumbnailFileName" ColumnName="ImageThumbnailFileName" />
-                <ScalarProperty Name="ImageFileName" ColumnName="ImageFileName" />
-                <ScalarProperty Name="ImageAltText" ColumnName="ImageAltText" />
-                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Prices">
             <EntityTypeMapping TypeName="FootyStreetModel.Price">
               <MappingFragment StoreEntitySet="Price">
@@ -2106,6 +2081,37 @@
                 <ScalarProperty Name="ImageID" ColumnName="ImageID" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="ProductImageID" ColumnName="ProductImageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Images">
+            <EntityTypeMapping TypeName="FootyStreetModel.Image">
+              <MappingFragment StoreEntitySet="Image">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ImageType" ColumnName="ImageType" />
+                <ScalarProperty Name="ImageThumbnailFilePath" ColumnName="ImageThumbnailFilePath" />
+                <ScalarProperty Name="ImageFilePath" ColumnName="ImageFilePath" />
+                <ScalarProperty Name="ImageThumbnailFileName" ColumnName="ImageThumbnailFileName" />
+                <ScalarProperty Name="ImageFileName" ColumnName="ImageFileName" />
+                <ScalarProperty Name="ImageAltText" ColumnName="ImageAltText" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tags">
+            <EntityTypeMapping TypeName="FootyStreetModel.Tag">
+              <MappingFragment StoreEntitySet="Tag">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="TagDescription" ColumnName="TagDescription" />
+                <ScalarProperty Name="TagName" ColumnName="TagName" />
+                <ScalarProperty Name="TagID" ColumnName="TagID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

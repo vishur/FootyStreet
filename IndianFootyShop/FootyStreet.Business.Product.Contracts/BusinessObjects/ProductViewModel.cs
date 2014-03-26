@@ -21,6 +21,8 @@ namespace FootyStreet.Business.Product.Contracts
         public string SelectedColor { get; set; }
         public string SelectedUnitofMeasure { get; set; }
         public string SelectedVendorID { get; set; }
+        public string SelectedTags { get; set; }
+
 
         public decimal BasePrice { get; set; }
         public decimal CostofLabor { get; set; }
@@ -36,6 +38,8 @@ namespace FootyStreet.Business.Product.Contracts
         public List<UomColor> UomColors { get; set; }
         public List<Image> Images { get; set; }
         public List<Vendor> Vendors { get; set; }
+        public List<Tag> Tags { get; set; }
+
 
         public IEnumerable<HttpPostedFileBase> ThumbnailImages { get; set; }
         public IEnumerable<HttpPostedFileBase> CompleteImages { get; set; }
@@ -99,6 +103,7 @@ namespace FootyStreet.Business.Product.Contracts
         public string ImageFileName { get; set; }
         public string ImageThumbnailFileName { get; set; }
         public string ImageFilePath { get; set; }
+        public string ImageType { get; set; }
         public string ImageThumbnailFilePath { get; set; }
     }
     public class Vendor
@@ -109,6 +114,14 @@ namespace FootyStreet.Business.Product.Contracts
         public int AddressID { get; set; }
         public int ContactID { get; set; }
         public string Comments { get; set; }
+    }
+
+    public class Tag
+    {
+        public int TagID { get; set; }
+        public string TagName { get; set; }
+        public string TagDescription { get; set; }
+        public int CategoryID { get; set; }
     }
 
 }

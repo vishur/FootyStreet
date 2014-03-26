@@ -47,15 +47,15 @@ namespace FootyStreet.Data
         public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<UnitofMeasure> UnitofMeasures { get; set; }
         public DbSet<ProductTag> ProductTags { get; set; }
-        public DbSet<Tag> Tags { get; set; }
         public DbSet<Vendor> Vendors { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<AddressType> AddressTypes { get; set; }
         public DbSet<Contact> Contacts { get; set; }
-        public DbSet<Image> Images { get; set; }
         public DbSet<Price> Prices { get; set; }
         public DbSet<ProductDetail> ProductDetails { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
+        public DbSet<Image> Images { get; set; }
+        public DbSet<Tag> Tags { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

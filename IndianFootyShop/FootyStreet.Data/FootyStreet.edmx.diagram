@@ -39,23 +39,23 @@
         <AssociationConnector Association="FootyStreetModel.FK_ProductReview_Review" ManuallyRouted="false" />
         <AssociationConnector Association="FootyStreetModel.FK_ProductUOMColor_UnitofMeasure" ManuallyRouted="false" />
         <EntityTypeShape EntityType="FootyStreetModel.ProductTag" Width="1.5" PointX="11.25" PointY="13.25" />
-        <EntityTypeShape EntityType="FootyStreetModel.Tag" Width="1.5" PointX="9" PointY="5.25" />
         <AssociationConnector Association="FootyStreetModel.FK_ProductTag_Product" />
-        <AssociationConnector Association="FootyStreetModel.FK_ProductTag_Tag" />
         <EntityTypeShape EntityType="FootyStreetModel.Vendor" Width="1.5" PointX="0.75" PointY="18.125" />
         <EntityTypeShape EntityType="FootyStreetModel.Address" Width="1.5" PointX="10.625" PointY="1" />
         <EntityTypeShape EntityType="FootyStreetModel.AddressType" Width="1.5" PointX="8.375" PointY="1.375" />
         <EntityTypeShape EntityType="FootyStreetModel.Contact" Width="1.5" PointX="5.375" PointY="0.75" />
         <AssociationConnector Association="FootyStreetModel.FK_Address_AddressType" />
-        <EntityTypeShape EntityType="FootyStreetModel.Image" Width="1.5" PointX="8.25" PointY="9" />
         <EntityTypeShape EntityType="FootyStreetModel.ProductImage" Width="1.5" PointX="10.5" PointY="17.25" />
-        <AssociationConnector Association="FootyStreetModel.FK_ProductImage_Image" />
         <AssociationConnector Association="FootyStreetModel.FK_ProductImage_ProductUOMColor" />
         <EntityTypeShape EntityType="FootyStreetModel.Price" Width="1.5" PointX="0.75" PointY="9.375" />
         <EntityTypeShape EntityType="FootyStreetModel.ProductDetail" Width="1.5" PointX="0.75" PointY="12.875" />
         <AssociationConnector Association="FootyStreetModel.FK_ProductDetail_Price" />
         <AssociationConnector Association="FootyStreetModel.FK_Product_ProductDetail" />
         <AssociationConnector Association="FootyStreetModel.FK_ProductDetail_Vendor" />
+        <EntityTypeShape EntityType="FootyStreetModel.Image" Width="1.5" PointX="8.25" PointY="9" />
+        <AssociationConnector Association="FootyStreetModel.FK_ProductImage_Image" />
+        <EntityTypeShape EntityType="FootyStreetModel.Tag" Width="1.5" PointX="10.375" PointY="6" />
+        <AssociationConnector Association="FootyStreetModel.FK_ProductTag_Tag" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
